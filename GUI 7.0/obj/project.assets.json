@@ -27,19 +27,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Admin\\.nuget\\packages\\": {}
+    "C:\\Users\\muxa1\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\GitHub\\C#\\ReadFlatFile\\GUI 7.0\\GUI 7.0.csproj",
+      "projectUniqueName": "C:\\Users\\muxa1\\OneDrive\\Рабочий стол\\Омар\\ReadFlatFile\\GUI 7.0\\GUI 7.0.csproj",
       "projectName": "GUI 7.0",
-      "projectPath": "D:\\GitHub\\C#\\ReadFlatFile\\GUI 7.0\\GUI 7.0.csproj",
-      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "D:\\GitHub\\C#\\ReadFlatFile\\GUI 7.0\\obj\\",
+      "projectPath": "C:\\Users\\muxa1\\OneDrive\\Рабочий стол\\Омар\\ReadFlatFile\\GUI 7.0\\GUI 7.0.csproj",
+      "packagesPath": "C:\\Users\\muxa1\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\muxa1\\OneDrive\\Рабочий стол\\Омар\\ReadFlatFile\\GUI 7.0\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\muxa1\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -53,8 +53,8 @@
         "net7.0-windows7.0": {
           "targetAlias": "net7.0-windows",
           "projectReferences": {
-            "D:\\GitHub\\C#\\ReadFlatFile\\Utils\\Utils.csproj": {
-              "projectPath": "D:\\GitHub\\C#\\ReadFlatFile\\Utils\\Utils.csproj"
+            "C:\\Users\\muxa1\\OneDrive\\Рабочий стол\\Омар\\ReadFlatFile\\Utils\\Utils.csproj": {
+              "projectPath": "C:\\Users\\muxa1\\OneDrive\\Рабочий стол\\Омар\\ReadFlatFile\\Utils\\Utils.csproj"
             }
           }
         }
@@ -87,7 +87,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
       }
     }
   }

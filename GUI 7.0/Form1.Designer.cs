@@ -53,6 +53,8 @@
             label9 = new Label();
             radioButton1 = new RadioButton();
             radioButton2 = new RadioButton();
+            textBox4 = new TextBox();
+            label10 = new Label();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -60,7 +62,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 21.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(686, 0);
+            label1.Location = new Point(670, 2);
             label1.Name = "label1";
             label1.Size = new Size(114, 40);
             label1.TabIndex = 1;
@@ -176,6 +178,7 @@
             // menuStrip1
             // 
             menuStrip1.BackColor = SystemColors.Control;
+            menuStrip1.ImageScalingSize = new Size(20, 20);
             menuStrip1.Items.AddRange(new ToolStripItem[] { файлToolStripMenuItem, консольToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
@@ -196,6 +199,7 @@
             очиститьДанныеToolStripMenuItem.Name = "очиститьДанныеToolStripMenuItem";
             очиститьДанныеToolStripMenuItem.Size = new Size(218, 22);
             очиститьДанныеToolStripMenuItem.Text = "Очистить данные";
+            очиститьДанныеToolStripMenuItem.Click += очиститьДанныеToolStripMenuItem_Click;
             // 
             // сгенирировать1000СтрокToolStripMenuItem
             // 
@@ -209,6 +213,7 @@
             сгенирировать1МСтрокToolStripMenuItem.Name = "сгенирировать1МСтрокToolStripMenuItem";
             сгенирировать1МСтрокToolStripMenuItem.Size = new Size(218, 22);
             сгенирировать1МСтрокToolStripMenuItem.Text = "Сгенерировать 1М строк";
+            сгенирировать1МСтрокToolStripMenuItem.Click += сгенирировать1МСтрокToolStripMenuItem_Click;
             // 
             // консольToolStripMenuItem
             // 
@@ -220,7 +225,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(764, 39);
+            label7.Location = new Point(757, 39);
             label7.Name = "label7";
             label7.Size = new Size(28, 15);
             label7.TabIndex = 14;
@@ -278,11 +283,30 @@
             radioButton2.UseVisualStyleBackColor = true;
             radioButton2.CheckedChanged += radioButton2_CheckedChanged;
             // 
+            // textBox4
+            // 
+            textBox4.Location = new Point(512, 123);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(269, 23);
+            textBox4.TabIndex = 21;
+            textBox4.Text = "typed_file.txt";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(512, 105);
+            label10.Name = "label10";
+            label10.Size = new Size(153, 15);
+            label10.TabIndex = 22;
+            label10.Text = "Путь до файла с данными:";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 435);
+            ClientSize = new Size(800, 433);
+            Controls.Add(label10);
+            Controls.Add(textBox4);
             Controls.Add(radioButton2);
             Controls.Add(radioButton1);
             Controls.Add(label9);
@@ -305,8 +329,8 @@
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
             MaximizeBox = false;
-            MaximumSize = new Size(816, 474);
-            MinimumSize = new Size(816, 474);
+            MaximumSize = new Size(816, 472);
+            MinimumSize = new Size(816, 472);
             Name = "Form1";
             Text = "Flat File v0.1";
             menuStrip1.ResumeLayout(false);
@@ -341,5 +365,7 @@
         private RadioButton radioButton1;
         private RadioButton radioButton2;
         private ToolStripMenuItem консольToolStripMenuItem;
+        private TextBox textBox4;
+        private Label label10;
     }
 }

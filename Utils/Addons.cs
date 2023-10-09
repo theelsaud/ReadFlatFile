@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Utils
 {
-    internal class Addons
+    public class Addons
     {
         private static List<string> Male_Name;
         private static List<string> Male_Lastname;
@@ -18,6 +19,21 @@ namespace Utils
         private static List<string> Female_FatherName;
 
         private static List<int> UniqueIDs;
+
+        private static string FileData = "typed_file.txt";
+        private static string FileIndexes = "indexes_file.txt";
+
+        public Addons(string DataFile)
+        {
+            Init();
+            FileData = DataFile;
+        }
+        public Addons(string DataFile, string DataIndexes)
+        {
+            Init();
+            FileData = DataFile;
+            FileIndexes = DataIndexes;
+        }
 
         public static async void Init()
         {
@@ -121,6 +137,53 @@ namespace Utils
         private static string GetRandomName(List<string> data)
         {
             return data[GetRandomInt(0, data.Count - 1)];
+        }
+
+        public void GenerateData(int Lines = 1000)
+        {
+            Console.WriteLine($"> Running Generating data: {Lines} lines");
+
+            GC.Collect();
+            Stopwatch sw = Stopwatch.StartNew();
+
+            List<RandomPersonData> data = new List<RandomPersonData>();
+
+            int x = 0;
+            while (x < Lines)
+            {
+                bool sex = x % 2 == 0;
+                data.Add(new RandomPersonData(GetRandomFullName(sex), sex, x));
+                x++;
+            }
+
+            // Write Data and Indexes
+            FileStream hFile = File.Open(FileData, FileMode.CreateNew);
+            FileStream hFileIndexes = File.Open(FileIndexes, FileMode.CreateNew);
+            x = 0;
+            int countbytes = 0;
+            while (x < Lines)
+            {
+                byte[] d = data[x].GetBytes();
+                hFile.Write(d);
+
+                string str = $"{data[x].GetFullName()},{countbytes}\n";
+                hFileIndexes.Write(Encoding.UTF8.GetBytes(str));
+
+                x++;
+                countbytes += d.Length;
+            }
+
+            sw.Stop();
+            Console.WriteLine("> Complete after " + (sw.ElapsedMilliseconds).ToString() + " ms");
+
+            hFileIndexes.Close();
+            hFile.Close();
+        }
+
+        public void ClearData()
+        {
+            File.Delete(FileData);
+            File.Delete(FileIndexes);
         }
     }
 }
