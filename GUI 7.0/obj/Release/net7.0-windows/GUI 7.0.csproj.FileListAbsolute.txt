@@ -1,0 +1,20 @@
+D:\GitHub\C#\ReadFlatFile\GUI 7.0\bin\Release\net7.0-windows\GUI 7.0.exe
+D:\GitHub\C#\ReadFlatFile\GUI 7.0\bin\Release\net7.0-windows\GUI 7.0.deps.json
+D:\GitHub\C#\ReadFlatFile\GUI 7.0\bin\Release\net7.0-windows\GUI 7.0.runtimeconfig.json
+D:\GitHub\C#\ReadFlatFile\GUI 7.0\bin\Release\net7.0-windows\GUI 7.0.dll
+D:\GitHub\C#\ReadFlatFile\GUI 7.0\bin\Release\net7.0-windows\GUI 7.0.pdb
+D:\GitHub\C#\ReadFlatFile\GUI 7.0\obj\Release\net7.0-windows\GUI_7._0.Form1.resources
+D:\GitHub\C#\ReadFlatFile\GUI 7.0\obj\Release\net7.0-windows\GUI 7.0.csproj.GenerateResource.cache
+D:\GitHub\C#\ReadFlatFile\GUI 7.0\obj\Release\net7.0-windows\GUI 7.0.GeneratedMSBuildEditorConfig.editorconfig
+D:\GitHub\C#\ReadFlatFile\GUI 7.0\obj\Release\net7.0-windows\GUI 7.0.AssemblyInfoInputs.cache
+D:\GitHub\C#\ReadFlatFile\GUI 7.0\obj\Release\net7.0-windows\GUI 7.0.AssemblyInfo.cs
+D:\GitHub\C#\ReadFlatFile\GUI 7.0\obj\Release\net7.0-windows\GUI 7.0.csproj.CoreCompileInputs.cache
+D:\GitHub\C#\ReadFlatFile\GUI 7.0\obj\Release\net7.0-windows\GUI 7.0.dll
+D:\GitHub\C#\ReadFlatFile\GUI 7.0\obj\Release\net7.0-windows\refint\GUI 7.0.dll
+D:\GitHub\C#\ReadFlatFile\GUI 7.0\obj\Release\net7.0-windows\GUI 7.0.pdb
+D:\GitHub\C#\ReadFlatFile\GUI 7.0\obj\Release\net7.0-windows\GUI 7.0.genruntimeconfig.cache
+D:\GitHub\C#\ReadFlatFile\GUI 7.0\obj\Release\net7.0-windows\ref\GUI 7.0.dll
+D:\GitHub\C#\ReadFlatFile\GUI 7.0\bin\Release\net7.0-windows\Utils.dll
+D:\GitHub\C#\ReadFlatFile\GUI 7.0\bin\Release\net7.0-windows\Utils.pdb
+D:\GitHub\C#\ReadFlatFile\GUI 7.0\obj\Release\net7.0-windows\GUI 7.0.csproj.AssemblyReference.cache
+D:\GitHub\C#\ReadFlatFile\GUI 7.0\obj\Release\net7.0-windows\GUI 7.0.csproj.CopyComplete

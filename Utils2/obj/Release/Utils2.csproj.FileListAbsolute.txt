@@ -1,0 +1,6 @@
+D:\GitHub\C#\ReadFlatFile\Utils2\bin\Release\Utils2.dll
+D:\GitHub\C#\ReadFlatFile\Utils2\bin\Release\Utils2.pdb
+D:\GitHub\C#\ReadFlatFile\Utils2\obj\Release\Utils2.csproj.AssemblyReference.cache
+D:\GitHub\C#\ReadFlatFile\Utils2\obj\Release\Utils2.csproj.CoreCompileInputs.cache
+D:\GitHub\C#\ReadFlatFile\Utils2\obj\Release\Utils2.dll
+D:\GitHub\C#\ReadFlatFile\Utils2\obj\Release\Utils2.pdb

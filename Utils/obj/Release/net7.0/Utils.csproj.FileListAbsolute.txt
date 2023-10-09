@@ -1,0 +1,11 @@
+D:\GitHub\C#\ReadFlatFile\Utils\bin\Release\net7.0\Utils.deps.json
+D:\GitHub\C#\ReadFlatFile\Utils\bin\Release\net7.0\Utils.dll
+D:\GitHub\C#\ReadFlatFile\Utils\bin\Release\net7.0\Utils.pdb
+D:\GitHub\C#\ReadFlatFile\Utils\obj\Release\net7.0\Utils.GeneratedMSBuildEditorConfig.editorconfig
+D:\GitHub\C#\ReadFlatFile\Utils\obj\Release\net7.0\Utils.AssemblyInfoInputs.cache
+D:\GitHub\C#\ReadFlatFile\Utils\obj\Release\net7.0\Utils.AssemblyInfo.cs
+D:\GitHub\C#\ReadFlatFile\Utils\obj\Release\net7.0\Utils.csproj.CoreCompileInputs.cache
+D:\GitHub\C#\ReadFlatFile\Utils\obj\Release\net7.0\Utils.dll
+D:\GitHub\C#\ReadFlatFile\Utils\obj\Release\net7.0\refint\Utils.dll
+D:\GitHub\C#\ReadFlatFile\Utils\obj\Release\net7.0\Utils.pdb
+D:\GitHub\C#\ReadFlatFile\Utils\obj\Release\net7.0\ref\Utils.dll
