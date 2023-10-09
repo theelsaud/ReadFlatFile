@@ -29,10 +29,14 @@ namespace GUI_7._0
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (!CheckFile()) return;
+
             List<Utils.RandomPersonData> data;
 
             GC.Collect();
             Stopwatch sw = Stopwatch.StartNew();
+
+            
 
             if (checkBox1.Checked)
             {
@@ -55,7 +59,7 @@ namespace GUI_7._0
 
             if (data.Count() == 0)
             {
-                richTextBox1.Text = "Failed to search - " + textBox1.Text;
+                richTextBox1.Text = "Data not found for key - " + textBox1.Text;
                 return;
             }
 
@@ -64,6 +68,19 @@ namespace GUI_7._0
             Console.WriteLine(data.Count());
 
             textBox1.Text = "";
+        }
+
+        private bool CheckFile()
+        {
+            Console.WriteLine("CheckFile");
+
+            if (!File.Exists(textBox4.Text))
+            {
+                richTextBox1.Text = "‘‡ÈÎ [ " + textBox4.Text + " ] ÌÂ Ì‡È‰ÂÌ.";
+                return false;
+            }
+
+            return true;
         }
 
         private void Ù‡ÈÎToolStripMenuItem_Click(object sender, EventArgs e)
@@ -106,7 +123,7 @@ namespace GUI_7._0
 
         private void Ó˜ËÒÚËÚ¸ƒ‡ÌÌ˚ÂToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("test");
+            Console.WriteLine("ClearData");
             Library.ClearData();
         }
     }

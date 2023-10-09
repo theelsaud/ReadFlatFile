@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\muxa1\\OneDrive\\Рабочий стол\\Омар\\ReadFlatFile\\GUI 7.0\\GUI 7.0.csproj": {}
+    "D:\\GitHub\\C#\\ReadFlatFileGitHub\\GUI 7.0\\GUI 7.0.csproj": {}
   },
   "projects": {
-    "C:\\Users\\muxa1\\OneDrive\\Рабочий стол\\Омар\\ReadFlatFile\\GUI 7.0\\GUI 7.0.csproj": {
+    "D:\\GitHub\\C#\\ReadFlatFileGitHub\\GUI 7.0\\GUI 7.0.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\muxa1\\OneDrive\\Рабочий стол\\Омар\\ReadFlatFile\\GUI 7.0\\GUI 7.0.csproj",
+        "projectUniqueName": "D:\\GitHub\\C#\\ReadFlatFileGitHub\\GUI 7.0\\GUI 7.0.csproj",
         "projectName": "GUI 7.0",
-        "projectPath": "C:\\Users\\muxa1\\OneDrive\\Рабочий стол\\Омар\\ReadFlatFile\\GUI 7.0\\GUI 7.0.csproj",
-        "packagesPath": "C:\\Users\\muxa1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\muxa1\\OneDrive\\Рабочий стол\\Омар\\ReadFlatFile\\GUI 7.0\\obj\\",
+        "projectPath": "D:\\GitHub\\C#\\ReadFlatFileGitHub\\GUI 7.0\\GUI 7.0.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\GitHub\\C#\\ReadFlatFileGitHub\\GUI 7.0\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\muxa1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,8 +28,8 @@
           "net7.0-windows7.0": {
             "targetAlias": "net7.0-windows",
             "projectReferences": {
-              "C:\\Users\\muxa1\\OneDrive\\Рабочий стол\\Омар\\ReadFlatFile\\Utils\\Utils.csproj": {
-                "projectPath": "C:\\Users\\muxa1\\OneDrive\\Рабочий стол\\Омар\\ReadFlatFile\\Utils\\Utils.csproj"
+              "D:\\GitHub\\C#\\ReadFlatFileGitHub\\Utils\\Utils.csproj": {
+                "projectPath": "D:\\GitHub\\C#\\ReadFlatFileGitHub\\Utils\\Utils.csproj"
               }
             }
           }
@@ -62,21 +62,21 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\muxa1\\OneDrive\\Рабочий стол\\Омар\\ReadFlatFile\\Utils\\Utils.csproj": {
+    "D:\\GitHub\\C#\\ReadFlatFileGitHub\\Utils\\Utils.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\muxa1\\OneDrive\\Рабочий стол\\Омар\\ReadFlatFile\\Utils\\Utils.csproj",
+        "projectUniqueName": "D:\\GitHub\\C#\\ReadFlatFileGitHub\\Utils\\Utils.csproj",
         "projectName": "Utils",
-        "projectPath": "C:\\Users\\muxa1\\OneDrive\\Рабочий стол\\Омар\\ReadFlatFile\\Utils\\Utils.csproj",
-        "packagesPath": "C:\\Users\\muxa1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\muxa1\\OneDrive\\Рабочий стол\\Омар\\ReadFlatFile\\Utils\\obj\\",
+        "projectPath": "D:\\GitHub\\C#\\ReadFlatFileGitHub\\Utils\\Utils.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\GitHub\\C#\\ReadFlatFileGitHub\\Utils\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\muxa1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -117,7 +117,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }
