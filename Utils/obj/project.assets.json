@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\GitHub\\C#\\ReadFlatFile\\Utils\\Utils.csproj",
+      "projectUniqueName": "D:\\GitHub\\C#\\ReadFlatFileGitHub\\Utils\\Utils.csproj",
       "projectName": "Utils",
-      "projectPath": "D:\\GitHub\\C#\\ReadFlatFile\\Utils\\Utils.csproj",
+      "projectPath": "D:\\GitHub\\C#\\ReadFlatFileGitHub\\Utils\\Utils.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "D:\\GitHub\\C#\\ReadFlatFile\\Utils\\obj\\",
+      "outputPath": "D:\\GitHub\\C#\\ReadFlatFileGitHub\\Utils\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -62,6 +62,59 @@ namespace Utils
                 return null;
             }
 
+            using (var reader = new StreamReader(FILE_INDEXES))
+            {
+                string line;
+                while ((line = reader.ReadLine()) != null)
+                {
+                    string[] data = line.Split(",");
+
+                    if (data[0] == fio)
+                    {
+                        FileStream hFile = new FileStream(FILE_DATA, FileMode.Open, FileAccess.Read);
+
+                        long iOffset = long.Parse(data[1]);
+
+                        // Переходим к нужному байту...
+                        hFile.Seek(iOffset, SeekOrigin.Begin);
+
+                        MemoryStream memoryStream = new MemoryStream();
+                        int currentByte;
+
+                        while ((currentByte = hFile.ReadByte()) != -1)
+                        {
+                            // Проверяем, является ли текущий байт символом '\n'
+                            if (currentByte == '\n')
+                            {
+                                break; // Если найден символ '\n', завершаем чтение
+                            }
+
+                            // Записываем текущий байт в память
+                            memoryStream.WriteByte((byte)currentByte);
+                        }
+
+                        byte[] resultBytes = memoryStream.ToArray();
+
+
+                        RandomPersonData person = new RandomPersonData();
+
+                        bool bState = person.ParseData(Encoding.UTF8.GetString(resultBytes));
+
+                        if (!bState)
+                        {
+                            Console.WriteLine($"Failed to parse data (Byte: {iOffset})");
+                        }
+                        else
+                        {
+                            Console.WriteLine($"Find on byte {iOffset}:\n" + person.GetFullName());
+                        }
+
+                        memoryStream.Close();
+                        hFile.Close();
+                    }
+                }
+            }
+
             return returnData;
         }
     }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vAsbUcJOl7qLpaQoctAMiFwhZOkPU2uQ2i/A8BuVCLhwiA0MOUgPQ3WsA8oisLeOFekT+SXV4Ttwk5JpSD1v0w==",
+  "dgSpecHash": "wgmacYGgYquAoXg4vKoojts0JKPXb2JAFfp4AD4aTJ1jT2gIMHLqtX8UjFPRr35MTuJa0B/4omP4ksYe7925gQ==",
   "success": true,
-  "projectFilePath": "D:\\GitHub\\C#\\ReadFlatFile\\ReadFlatFile\\ReadFlatFile.csproj",
+  "projectFilePath": "D:\\GitHub\\C#\\ReadFlatFileGitHub\\ReadFlatFile\\ReadFlatFile.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

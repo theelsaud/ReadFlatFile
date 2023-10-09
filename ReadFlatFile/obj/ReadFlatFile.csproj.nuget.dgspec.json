@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\GitHub\\C#\\ReadFlatFile\\ReadFlatFile\\ReadFlatFile.csproj": {}
+    "D:\\GitHub\\C#\\ReadFlatFileGitHub\\ReadFlatFile\\ReadFlatFile.csproj": {}
   },
   "projects": {
-    "D:\\GitHub\\C#\\ReadFlatFile\\ReadFlatFile\\ReadFlatFile.csproj": {
+    "D:\\GitHub\\C#\\ReadFlatFileGitHub\\ReadFlatFile\\ReadFlatFile.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GitHub\\C#\\ReadFlatFile\\ReadFlatFile\\ReadFlatFile.csproj",
+        "projectUniqueName": "D:\\GitHub\\C#\\ReadFlatFileGitHub\\ReadFlatFile\\ReadFlatFile.csproj",
         "projectName": "ReadFlatFile",
-        "projectPath": "D:\\GitHub\\C#\\ReadFlatFile\\ReadFlatFile\\ReadFlatFile.csproj",
+        "projectPath": "D:\\GitHub\\C#\\ReadFlatFileGitHub\\ReadFlatFile\\ReadFlatFile.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\GitHub\\C#\\ReadFlatFile\\ReadFlatFile\\obj\\",
+        "outputPath": "D:\\GitHub\\C#\\ReadFlatFileGitHub\\ReadFlatFile\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -32,11 +32,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\GitHub\\C#\\ReadFlatFile\\GUI 7.0\\GUI 7.0.csproj",
+      "projectUniqueName": "D:\\GitHub\\C#\\ReadFlatFileGitHub\\GUI 7.0\\GUI 7.0.csproj",
       "projectName": "GUI 7.0",
-      "projectPath": "D:\\GitHub\\C#\\ReadFlatFile\\GUI 7.0\\GUI 7.0.csproj",
+      "projectPath": "D:\\GitHub\\C#\\ReadFlatFileGitHub\\GUI 7.0\\GUI 7.0.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "D:\\GitHub\\C#\\ReadFlatFile\\GUI 7.0\\obj\\",
+      "outputPath": "D:\\GitHub\\C#\\ReadFlatFileGitHub\\GUI 7.0\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -53,8 +53,8 @@
         "net7.0-windows7.0": {
           "targetAlias": "net7.0-windows",
           "projectReferences": {
-            "D:\\GitHub\\C#\\ReadFlatFile\\Utils\\Utils.csproj": {
-              "projectPath": "D:\\GitHub\\C#\\ReadFlatFile\\Utils\\Utils.csproj"
+            "D:\\GitHub\\C#\\ReadFlatFileGitHub\\Utils\\Utils.csproj": {
+              "projectPath": "D:\\GitHub\\C#\\ReadFlatFileGitHub\\Utils\\Utils.csproj"
             }
           }
         }
