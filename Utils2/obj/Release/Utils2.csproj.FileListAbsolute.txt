@@ -4,3 +4,9 @@ D:\GitHub\C#\ReadFlatFile\Utils2\obj\Release\Utils2.csproj.AssemblyReference.cac
 D:\GitHub\C#\ReadFlatFile\Utils2\obj\Release\Utils2.csproj.CoreCompileInputs.cache
 D:\GitHub\C#\ReadFlatFile\Utils2\obj\Release\Utils2.dll
 D:\GitHub\C#\ReadFlatFile\Utils2\obj\Release\Utils2.pdb
+C:\Users\muxa1\OneDrive\Рабочий стол\Омар\ReadFlatFileMedveDux\Utils2\bin\Release\Utils2.dll
+C:\Users\muxa1\OneDrive\Рабочий стол\Омар\ReadFlatFileMedveDux\Utils2\bin\Release\Utils2.pdb
+C:\Users\muxa1\OneDrive\Рабочий стол\Омар\ReadFlatFileMedveDux\Utils2\obj\Release\Utils2.csproj.AssemblyReference.cache
+C:\Users\muxa1\OneDrive\Рабочий стол\Омар\ReadFlatFileMedveDux\Utils2\obj\Release\Utils2.csproj.CoreCompileInputs.cache
+C:\Users\muxa1\OneDrive\Рабочий стол\Омар\ReadFlatFileMedveDux\Utils2\obj\Release\Utils2.dll
+C:\Users\muxa1\OneDrive\Рабочий стол\Омар\ReadFlatFileMedveDux\Utils2\obj\Release\Utils2.pdb
