@@ -56,6 +56,7 @@
             radioButton2 = new RadioButton();
             textBox4 = new TextBox();
             label10 = new Label();
+            checkBox2 = new CheckBox();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -312,11 +313,24 @@
             label10.TabIndex = 22;
             label10.Text = "Путь до файла с данными:";
             // 
+            // checkBox2
+            // 
+            checkBox2.AutoSize = true;
+            checkBox2.Checked = true;
+            checkBox2.CheckState = CheckState.Checked;
+            checkBox2.Location = new Point(512, 399);
+            checkBox2.Name = "checkBox2";
+            checkBox2.Size = new Size(233, 19);
+            checkBox2.TabIndex = 23;
+            checkBox2.Text = "Показывать только первый результат";
+            checkBox2.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 431);
+            Controls.Add(checkBox2);
             Controls.Add(label10);
             Controls.Add(textBox4);
             Controls.Add(radioButton2);
@@ -381,5 +395,6 @@
         private Label label10;
         private ToolStripMenuItem создатьПустойФайлToolStripMenuItem;
         private ToolStripMenuItem открытьПапкуСФайламиToolStripMenuItem;
+        private CheckBox checkBox2;
     }
 }

@@ -37,7 +37,7 @@ namespace GUI_7._0
         {
             if (!CheckFile()) return;
 
-            List<Utils.PersonData> data;
+            List<PersonData> data;
 
             GC.Collect();
             Stopwatch sw = Stopwatch.StartNew();
@@ -69,9 +69,27 @@ namespace GUI_7._0
                 return;
             }
 
-            richTextBox1.Text = data[0].ExportData();
+            string buffer = "";
 
-            Console.WriteLine(data.Count());
+            if(checkBox2.Checked) {
+                var x = data[0];
+                buffer += $"ID: {x.id}\n";
+                buffer += $"ФИО: {x.fio}\n";
+                buffer += $"Группа: {x.group} (Курс: {x.course})\n";
+                buffer += $"Пол: {(x.sex ? 'Ж' : 'М')}\n";
+                buffer += $"==================================\n\n\n";
+            } else {
+                data.ForEach(x =>
+                {
+                    buffer += $"ID: {x.id}\n";
+                    buffer += $"ФИО: {x.fio}\n";
+                    buffer += $"Группа: {x.group} (Курс: {x.course})\n";
+                    buffer += $"Пол: {(x.sex ? 'Ж' : 'М')}\n";
+                    buffer += $"==================================\n\n\n";
+                });
+            }
+
+            richTextBox1.Text = buffer;
 
             textBox1.Text = "";
         }
@@ -145,7 +163,21 @@ namespace GUI_7._0
                 return;
             //textBox2.Text;
 
-            Library.AddLine(textBox2.Text, textBox3.Text, comboBox1.Text, radioButton1.Checked);
+            bool bState = Library.AddLine(textBox2.Text, textBox3.Text, comboBox1.Text, radioButton1.Checked);
+
+            if(!bState)
+            {
+                richTextBox1.Text = "Ошибка при добавлении данных...";
+                return;
+            }
+
+            richTextBox1.Text = "Данные успешно добавлены - " + textBox2.Text + " (" + textBox3.Text + " - " + comboBox1.Text + ") в " + textBox4.Text;
+
+            textBox2.Text = "";
+            textBox3.Text = "";
+            radioButton1.Checked = false;
+            radioButton2.Checked = false;
+            comboBox1.TabIndex = 0;
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)

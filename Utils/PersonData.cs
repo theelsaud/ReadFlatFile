@@ -16,13 +16,11 @@ namespace Utils
             COUNT
         }
 
-        private string id;
-        
-        private string fio;
-        private bool sex;
-
-        private string group;
-        private string course;
+        public string id { get; private set; }
+        public string fio { get; private set; }
+        public bool sex { get; private set; }
+        public string group { get; private set; }
+        public string course { get; private set; }
 
         public PersonData()
         {
@@ -52,7 +50,7 @@ namespace Utils
             this.id = id.ToString();
         }
 
-        public int GetCountOfBytes()
+        public readonly int GetCountOfBytes()
         {
             return Encoding.UTF8.GetBytes(ExportData()).Count();
         }
@@ -77,13 +75,13 @@ namespace Utils
             return true;
         }
 
-        public int GetId()
+        public readonly int GetId()
         {
             Console.WriteLine("GetID: " + id);
             return Convert.ToInt32(id);
         }
 
-        public string ExportData()
+        public readonly string ExportData()
         {
             return id.PadLeft(8, '0') 
                 + SPLITSYMBOL + group.PadRight(4)
@@ -92,7 +90,7 @@ namespace Utils
                 + SPLITSYMBOL + fio.PadRight(50) + SPLITSYMBOL;
         }
 
-        public string GetFullName()
+        public readonly string GetFullName()
         {
             return fio;
         }
