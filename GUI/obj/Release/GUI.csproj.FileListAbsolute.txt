@@ -11,3 +11,17 @@ D:\GitHub\C#\ReadFlatFile\GUI\obj\Release\GUI.csproj.CoreCompileInputs.cache
 D:\GitHub\C#\ReadFlatFile\GUI\obj\Release\GUI.csproj.CopyComplete
 D:\GitHub\C#\ReadFlatFile\GUI\obj\Release\GUI.exe
 D:\GitHub\C#\ReadFlatFile\GUI\obj\Release\GUI.pdb
+C:\Users\muxa1\OneDrive\Рабочий стол\Омар\ReadFlatFileMedveDux\GUI\bin\Release\GUI.exe.config
+C:\Users\muxa1\OneDrive\Рабочий стол\Омар\ReadFlatFileMedveDux\GUI\bin\Release\GUI.exe
+C:\Users\muxa1\OneDrive\Рабочий стол\Омар\ReadFlatFileMedveDux\GUI\bin\Release\GUI.pdb
+C:\Users\muxa1\OneDrive\Рабочий стол\Омар\ReadFlatFileMedveDux\GUI\bin\Release\Utils2.dll
+C:\Users\muxa1\OneDrive\Рабочий стол\Омар\ReadFlatFileMedveDux\GUI\bin\Release\Utils2.pdb
+C:\Users\muxa1\OneDrive\Рабочий стол\Омар\ReadFlatFileMedveDux\GUI\obj\Release\GUI.csproj.AssemblyReference.cache
+C:\Users\muxa1\OneDrive\Рабочий стол\Омар\ReadFlatFileMedveDux\GUI\obj\Release\GUI.csproj.SuggestedBindingRedirects.cache
+C:\Users\muxa1\OneDrive\Рабочий стол\Омар\ReadFlatFileMedveDux\GUI\obj\Release\GUI.Form1.resources
+C:\Users\muxa1\OneDrive\Рабочий стол\Омар\ReadFlatFileMedveDux\GUI\obj\Release\GUI.Properties.Resources.resources
+C:\Users\muxa1\OneDrive\Рабочий стол\Омар\ReadFlatFileMedveDux\GUI\obj\Release\GUI.csproj.GenerateResource.cache
+C:\Users\muxa1\OneDrive\Рабочий стол\Омар\ReadFlatFileMedveDux\GUI\obj\Release\GUI.csproj.CoreCompileInputs.cache
+C:\Users\muxa1\OneDrive\Рабочий стол\Омар\ReadFlatFileMedveDux\GUI\obj\Release\GUI.csproj.CopyComplete
+C:\Users\muxa1\OneDrive\Рабочий стол\Омар\ReadFlatFileMedveDux\GUI\obj\Release\GUI.exe
+C:\Users\muxa1\OneDrive\Рабочий стол\Омар\ReadFlatFileMedveDux\GUI\obj\Release\GUI.pdb

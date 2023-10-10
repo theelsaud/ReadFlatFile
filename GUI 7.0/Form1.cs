@@ -15,7 +15,7 @@ namespace GUI_7._0
             AllocConsole();
         }
 
-        
+
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -36,7 +36,7 @@ namespace GUI_7._0
             GC.Collect();
             Stopwatch sw = Stopwatch.StartNew();
 
-            
+
 
             if (checkBox1.Checked)
             {
@@ -118,6 +118,7 @@ namespace GUI_7._0
 
         private void ñãåíèðèðîâàòü1ÌÑòðîêToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Library.ClearData();
             Library.GenerateData(1000000);
         }
 
@@ -125,6 +126,30 @@ namespace GUI_7._0
         {
             Console.WriteLine("ClearData");
             Library.ClearData();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (!CheckFile())
+                return;
+            //textBox2.Text;
+            
+            Library.AddLine(textBox2.Text, textBox3.Text, comboBox1.Text, radioButton1.Checked);
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

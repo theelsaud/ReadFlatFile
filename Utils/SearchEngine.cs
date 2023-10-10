@@ -9,7 +9,7 @@ namespace Utils
     public class SearchEngine
     {
         public const string FILE_DATA = "typed_file.txt";
-        public const string FILE_INDEXES = "typed_file.txt";
+        public const string FILE_INDEXES = "indexes_file.txt";
 
         public static List<RandomPersonData> SearchInFlatFile(string fio)
         {
@@ -62,16 +62,21 @@ namespace Utils
                 return null;
             }
 
+            
+
             using (var reader = new StreamReader(FILE_INDEXES))
             {
                 string line;
                 while ((line = reader.ReadLine()) != null)
                 {
                     string[] data = line.Split(",");
+                    //Console.Write(data[0] + "\n");
 
-                    if (data[0] == fio)
+                    if (data[0].Equals(fio))
                     {
                         FileStream hFile = new FileStream(FILE_DATA, FileMode.Open, FileAccess.Read);
+
+                        Console.Write("test\n");
 
                         long iOffset = long.Parse(data[1]);
 
@@ -107,6 +112,7 @@ namespace Utils
                         else
                         {
                             Console.WriteLine($"Find on byte {iOffset}:\n" + person.GetFullName());
+                            returnData.Add(person);
                         }
 
                         memoryStream.Close();
