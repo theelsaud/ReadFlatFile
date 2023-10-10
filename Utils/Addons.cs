@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Utils
 {
@@ -178,6 +180,52 @@ namespace Utils
 
             hFileIndexes.Close();
             hFile.Close();
+        }
+
+        public bool AddLine(string fio, string group, string course, bool sex)
+        {
+            if (!File.Exists(FileData)) return false;
+
+            string[] lines = File.ReadAllLines(FileData);
+
+            RandomPersonData data = new RandomPersonData();
+
+            data.ParseData(lines[lines.Length - 1]);
+            int id  = data.GetId() + 1;
+
+            data = new RandomPersonData(id, fio, group, course, !sex);
+
+            int bytes = Encoding.UTF8.GetBytes(data.ExportData()).Count();
+            
+            File.AppendAllText(FileData, data.ExportData() + "\n");
+
+            Console.WriteLine(bytes.ToString());
+            string lastLine = 0.ToString();
+            lines = File.ReadAllLines(FileIndexes);
+
+            if (lines.Length == 0){
+                lastLine = 0.ToString();
+            } else
+            {
+                lastLine = (lines[lines.Count() - 1]).Split(",")[1];
+            }
+
+            Console.WriteLine(lastLine);
+
+
+            Console.WriteLine("MISHA");
+            
+            File.AppendAllText(FileIndexes, fio + "," + (bytes + Convert.ToUInt32(lastLine)).ToString() + "\n");
+
+            Console.WriteLine(data.ExportData());   
+
+            return true;
+            
+        }
+
+        public void UpdateFilePath(string filePath)
+        {
+            FileData = filePath;
         }
 
         public void ClearData()

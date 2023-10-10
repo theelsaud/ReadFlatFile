@@ -49,7 +49,19 @@ namespace Utils
             group = Addons.GetRandomInt(100, 104).ToString();
             course = Addons.GetRandomInt(1, 4).ToString();
         }
+        public RandomPersonData(int id, string fio, string group, string course, bool sex)
+        {
+            this.sex = sex;
+            this.fio = fio;
+            this.group = group;
+            this.course = course;
+            this.id = id.ToString();
+        }
 
+        public int GetCountOfBytes()
+        {
+            return Encoding.UTF8.GetBytes(ExportData()).Count();
+        }
 
         public bool ParseData(string line)
         {
@@ -69,6 +81,12 @@ namespace Utils
             course = subs[(int)Position.COURSE].Trim();
 
             return true;
+        }
+
+        public int GetId()
+        {
+            Console.WriteLine("GetID: " + id);
+            return Convert.ToInt32(id);
         }
 
         public string ExportData()
