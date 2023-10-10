@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\muxa1\\OneDrive\\Рабочий стол\\Омар\\ReadFlatFileMedveDux\\Utils\\Utils.csproj": {}
+    "D:\\GitHub\\C#\\ReadFlatFileGitHub\\Utils\\Utils.csproj": {}
   },
   "projects": {
-    "C:\\Users\\muxa1\\OneDrive\\Рабочий стол\\Омар\\ReadFlatFileMedveDux\\Utils\\Utils.csproj": {
+    "D:\\GitHub\\C#\\ReadFlatFileGitHub\\Utils\\Utils.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\muxa1\\OneDrive\\Рабочий стол\\Омар\\ReadFlatFileMedveDux\\Utils\\Utils.csproj",
+        "projectUniqueName": "D:\\GitHub\\C#\\ReadFlatFileGitHub\\Utils\\Utils.csproj",
         "projectName": "Utils",
-        "projectPath": "C:\\Users\\muxa1\\OneDrive\\Рабочий стол\\Омар\\ReadFlatFileMedveDux\\Utils\\Utils.csproj",
-        "packagesPath": "C:\\Users\\muxa1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\muxa1\\OneDrive\\Рабочий стол\\Омар\\ReadFlatFileMedveDux\\Utils\\obj\\",
+        "projectPath": "D:\\GitHub\\C#\\ReadFlatFileGitHub\\Utils\\Utils.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "D:\\GitHub\\C#\\ReadFlatFileGitHub\\Utils\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\muxa1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -55,7 +55,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

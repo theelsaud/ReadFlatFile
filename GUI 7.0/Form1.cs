@@ -7,11 +7,18 @@ namespace GUI_7._0
     public partial class Form1 : Form
     {
         private static Addons Library;
+        private static SearchEngine SEwww;
 
         public Form1()
         {
             InitializeComponent();
-            Library = new Addons(textBox4.Text);
+
+            string FilePath = textBox4.Text;
+
+            Library = new Addons(FilePath);
+            Library.Off();
+            SEwww = new SearchEngine(FilePath);
+
             AllocConsole();
         }
 
@@ -31,7 +38,7 @@ namespace GUI_7._0
         {
             if (!CheckFile()) return;
 
-            List<Utils.RandomPersonData> data;
+            List<Utils.PersonData> data;
 
             GC.Collect();
             Stopwatch sw = Stopwatch.StartNew();
@@ -40,11 +47,11 @@ namespace GUI_7._0
 
             if (checkBox1.Checked)
             {
-                data = Utils.SearchEngine.SearchInIndexesFile(textBox1.Text);
+                data = SEwww.SearchInIndexesFile(textBox1.Text.Trim());
             }
             else
             {
-                data = Utils.SearchEngine.SearchInFlatFile(textBox1.Text);
+                data = SEwww.SearchInFlatFile(textBox1.Text.Trim());
             }
 
             sw.Stop();
@@ -72,10 +79,10 @@ namespace GUI_7._0
 
         private bool CheckFile()
         {
-            Console.WriteLine("CheckFile");
-
             if (!File.Exists(textBox4.Text))
             {
+                Console.WriteLine("CheckFile");
+
                 richTextBox1.Text = "‘‡ÈÎ [ " + textBox4.Text + " ] ÌÂ Ì‡È‰ÂÌ.";
                 return false;
             }
@@ -138,7 +145,7 @@ namespace GUI_7._0
             if (!CheckFile())
                 return;
             //textBox2.Text;
-            
+
             Library.AddLine(textBox2.Text, textBox3.Text, comboBox1.Text, radioButton1.Checked);
         }
 
@@ -150,6 +157,23 @@ namespace GUI_7._0
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void ÒÓÁ‰‡Ú¸œÛÒÚÓÈ‘‡ÈÎToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FileStream hFile = File.Create(textBox4.Text);
+            hFile.Close();
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+            Library.UpdateFilePath(textBox4.Text);
+            SEwww.UpdateFilePath(textBox4.Text);
+        }
+
+        private void ÓÚÍ˚Ú¸œ‡ÔÍÛ—‘‡ÈÎ‡ÏËToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Process.Start("explorer.exe", Environment.CurrentDirectory);
         }
     }
 }

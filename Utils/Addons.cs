@@ -36,6 +36,11 @@ namespace Utils
             FileData = DataFile;
             FileIndexes = DataIndexes;
         }
+        
+        public void Off()
+        {
+
+        }
 
         public static async void Init()
         {
@@ -148,13 +153,13 @@ namespace Utils
             GC.Collect();
             Stopwatch sw = Stopwatch.StartNew();
 
-            List<RandomPersonData> data = new List<RandomPersonData>();
+            List<PersonData> data = new List<PersonData>();
 
             int x = 0;
             while (x < Lines)
             {
                 bool sex = x % 2 == 0;
-                data.Add(new RandomPersonData(GetRandomFullName(sex), sex, x));
+                data.Add(new PersonData(GetRandomFullName(sex), sex, x));
                 x++;
             }
 
@@ -184,40 +189,59 @@ namespace Utils
 
         public bool AddLine(string fio, string group, string course, bool sex)
         {
+            // Проверяем существование файла.
             if (!File.Exists(FileData)) return false;
 
             string[] lines = File.ReadAllLines(FileData);
 
-            RandomPersonData data = new RandomPersonData();
+            PersonData data = new PersonData();
 
-            data.ParseData(lines[lines.Length - 1]);
-            int id  = data.GetId() + 1;
+            int id = 0;
 
-            data = new RandomPersonData(id, fio, group, course, !sex);
-
-            int bytes = Encoding.UTF8.GetBytes(data.ExportData()).Count();
-            
-            File.AppendAllText(FileData, data.ExportData() + "\n");
-
-            Console.WriteLine(bytes.ToString());
-            string lastLine = 0.ToString();
-            lines = File.ReadAllLines(FileIndexes);
-
-            if (lines.Length == 0){
-                lastLine = 0.ToString();
-            } else
+            if (lines.Length > 0)
             {
-                lastLine = (lines[lines.Count() - 1]).Split(",")[1];
+                // Получаем последний присвоенный ID
+                bool bState = data.ParseData(lines[lines.Length - 1]);
+                if (!bState) return false;
+                id = data.GetId() + 1;
             }
 
-            Console.WriteLine(lastLine);
+            Console.WriteLine(id);
 
+            data = new PersonData(id, fio, group, course, sex);
 
-            Console.WriteLine("MISHA");
+            string e = data.ExportData();
+
+            File.AppendAllText(FileData, e + "\n");
+
+            int bytes = Encoding.UTF8.GetBytes(e).Count();
             
-            File.AppendAllText(FileIndexes, fio + "," + (bytes + Convert.ToUInt32(lastLine)).ToString() + "\n");
 
-            Console.WriteLine(data.ExportData());   
+            Console.WriteLine(bytes.ToString());
+
+            if (!File.Exists(FileIndexes)) {
+                FileStream fs = File.Create(FileIndexes);
+                fs.Close();
+            }
+
+            string[] linesIndexes = File.ReadAllLines(FileIndexes);
+
+            int allBytes = 0;
+
+            if (lines.Length != 0) 
+            {
+                int lastbytes = Encoding.UTF8.GetBytes(lines[lines.Length - 1]).Count();
+
+                string lastByte = (linesIndexes[linesIndexes.Count() - 1]).Split(",")[1];
+
+                allBytes = lastbytes + Convert.ToInt32(lastByte) + 1;
+            }
+
+            Console.WriteLine(allBytes);
+            
+            File.AppendAllText(FileIndexes, fio + "," + allBytes.ToString() + "\n");
+
+            Console.WriteLine("Success add data - " + data.GetId().ToString());
 
             return true;
             

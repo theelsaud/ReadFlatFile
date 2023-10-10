@@ -8,12 +8,23 @@ namespace Utils
 {
     public class SearchEngine
     {
-        public const string FILE_DATA = "typed_file.txt";
-        public const string FILE_INDEXES = "indexes_file.txt";
+        private static string FILE_DATA = "typed_file.txt";
+        private static string FILE_INDEXES = "indexes_file.txt";
 
-        public static List<RandomPersonData> SearchInFlatFile(string fio)
+        public SearchEngine(string FilePath)
         {
-            List<RandomPersonData> returnData = new List<RandomPersonData>();
+            FILE_DATA = FilePath;
+        }
+
+        public SearchEngine(string FilePath, string FileIndexes)
+        {
+            FILE_DATA = FilePath;
+            FILE_INDEXES = FileIndexes;
+        }
+
+        public List<PersonData> SearchInFlatFile(string fio)
+        {
+            List<PersonData> returnData = new List<PersonData>();
 
             if (!File.Exists(FILE_DATA))
             {
@@ -27,7 +38,7 @@ namespace Utils
                 string line;
                 while ((line = reader.ReadLine()) != null)
                 {
-                    RandomPersonData data = new RandomPersonData();
+                    PersonData data = new PersonData();
 
                     bool bState = data.ParseData(line);
                     if (!bState)
@@ -36,7 +47,7 @@ namespace Utils
                     }
                     else
                     {
-                        if (data.GetFullName().Equals(fio))
+                        if (data.GetFullName().Contains(fio))
                         {
                             Console.WriteLine($"Find on line {x}:\n" + line);
                             returnData.Add(data);
@@ -52,9 +63,9 @@ namespace Utils
             return returnData;
         }
 
-        public static List<RandomPersonData> SearchInIndexesFile(string fio)
+        public List<PersonData> SearchInIndexesFile(string fio)
         {
-            List<RandomPersonData> returnData = new List<RandomPersonData>();
+            List<PersonData> returnData = new List<PersonData>();
 
             if (!File.Exists(FILE_INDEXES))
             {
@@ -72,7 +83,7 @@ namespace Utils
                     string[] data = line.Split(",");
                     //Console.Write(data[0] + "\n");
 
-                    if (data[0].Equals(fio))
+                    if (data[0].Contains(fio))
                     {
                         FileStream hFile = new FileStream(FILE_DATA, FileMode.Open, FileAccess.Read);
 
@@ -101,7 +112,7 @@ namespace Utils
                         byte[] resultBytes = memoryStream.ToArray();
 
 
-                        RandomPersonData person = new RandomPersonData();
+                        PersonData person = new PersonData();
 
                         bool bState = person.ParseData(Encoding.UTF8.GetString(resultBytes));
 
@@ -122,6 +133,11 @@ namespace Utils
             }
 
             return returnData;
+        }
+
+        public void UpdateFilePath(string filePath)
+        {
+            FILE_DATA = filePath;
         }
     }
 }
