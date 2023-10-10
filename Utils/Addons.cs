@@ -1,35 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
+﻿using System.Diagnostics;
 using System.Text;
-using System.Threading.Tasks;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace Utils
 {
     public class Addons
     {
-        private static List<string> Male_Name;
-        private static List<string> Male_Lastname;
-        private static List<string> Male_FatherName;
+        private static List<string> Male_Name = new();
+        private static List<string> Male_Lastname = new();
+        private static List<string> Male_FatherName = new();
 
-
-        private static List<string> Female_Name;
-        private static List<string> Female_Lastname;
-        private static List<string> Female_FatherName;
-
-        private static List<int> UniqueIDs;
+        private static List<string> Female_Name = new();
+        private static List<string> Female_Lastname = new();
+        private static List<string> Female_FatherName = new();
 
         private static string FileData = "typed_file.txt";
         private static string FileIndexes = "indexes_file.txt";
+
+        public Addons()
+        {
+            Init();
+        }
 
         public Addons(string DataFile)
         {
             Init();
             FileData = DataFile;
         }
+        
         public Addons(string DataFile, string DataIndexes)
         {
             Init();
@@ -37,11 +34,6 @@ namespace Utils
             FileIndexes = DataIndexes;
         }
         
-        public void Off()
-        {
-
-        }
-
         public static async void Init()
         {
             Male_Name = new List<string>();
@@ -51,10 +43,6 @@ namespace Utils
             Female_Name = new List<string>();
             Female_Lastname = new List<string>();
             Female_FatherName = new List<string>();
-
-            UniqueIDs = new List<int>();
-            UniqueIDs = Enumerable.Range(1, 10000000).ToList();
-            Shuffle(UniqueIDs);
 
             Task task1 = LoadFromFileAsync("generator/Male_Name.txt", Male_Name);
             Task task2 = LoadFromFileAsync("generator/Male_Lastname.txt", Male_Lastname);
@@ -90,10 +78,6 @@ namespace Utils
         //    return guid.ToString();
         //}
 
-        public static int GenerateUniqueId(int x)
-        {
-            return UniqueIDs[x];
-        }
 
         public static async Task LoadFromFileAsync(string datafile, List<string> data)
         {
@@ -107,16 +91,11 @@ namespace Utils
             {
                 using (var reader = new StreamReader(datafile, Encoding.UTF8))
                 {
-                    string line;
+                    string? line;
                     while ((line = reader.ReadLine()) != null)
                     {
-                        //Console.WriteLine(line);
-                        //data.Append(line);
                         data.Add(line);
                     }
-
-                    //Console.WriteLine($"{data.Count} - {data}");
-
                     reader.Close();
                 }
             });
@@ -237,14 +216,13 @@ namespace Utils
                 allBytes = lastbytes + Convert.ToInt32(lastByte) + 1;
             }
 
-            Console.WriteLine(allBytes);
+            //Console.WriteLine(allBytes);
             
             File.AppendAllText(FileIndexes, fio + "," + allBytes.ToString() + "\n");
 
             Console.WriteLine("Success add data - " + data.GetId().ToString());
 
             return true;
-            
         }
 
         public void UpdateFilePath(string filePath)

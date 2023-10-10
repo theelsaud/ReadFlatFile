@@ -1,17 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Metadata;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using System.Xml;
+﻿using System.Text;
 
 namespace Utils
 {
-    public class PersonData
+    public struct PersonData
     {
-        public const string SPLITSYMBOL = "\t|\t"; // 3 bytes
+        private const string SPLITSYMBOL = "\t|\t"; // 3 bytes
 
         private enum Position
         {

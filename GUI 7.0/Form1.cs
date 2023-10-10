@@ -6,8 +6,8 @@ namespace GUI_7._0
 {
     public partial class Form1 : Form
     {
-        private static Addons Library;
-        private static SearchEngine SEwww;
+        private static Addons Library = new();
+        private static SearchEngine SEwww = new();
 
         public Form1()
         {
@@ -16,7 +16,6 @@ namespace GUI_7._0
             string FilePath = textBox4.Text;
 
             Library = new Addons(FilePath);
-            Library.Off();
             SEwww = new SearchEngine(FilePath);
 
             AllocConsole();

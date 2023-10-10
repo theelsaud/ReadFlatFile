@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 
 namespace Utils
 {
@@ -10,6 +6,10 @@ namespace Utils
     {
         private static string FILE_DATA = "typed_file.txt";
         private static string FILE_INDEXES = "indexes_file.txt";
+
+        public SearchEngine()
+        {
+        }
 
         public SearchEngine(string FilePath)
         {
@@ -29,13 +29,13 @@ namespace Utils
             if (!File.Exists(FILE_DATA))
             {
                 Console.WriteLine("File not found " + FILE_DATA);
-                return null;
+                return returnData;
             }
 
             using (var reader = new StreamReader(FILE_DATA))
             {
                 int x = 1;
-                string line;
+                string? line;
                 while ((line = reader.ReadLine()) != null)
                 {
                     PersonData data = new PersonData();
@@ -58,8 +58,6 @@ namespace Utils
                 }
             }
 
-
-
             return returnData;
         }
 
@@ -70,14 +68,12 @@ namespace Utils
             if (!File.Exists(FILE_INDEXES))
             {
                 Console.WriteLine("File not found " + FILE_INDEXES);
-                return null;
+                return returnData;
             }
-
-            
 
             using (var reader = new StreamReader(FILE_INDEXES))
             {
-                string line;
+                string? line;
                 while ((line = reader.ReadLine()) != null)
                 {
                     string[] data = line.Split(",");
