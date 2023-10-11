@@ -7,7 +7,7 @@ namespace GUI_7._0
     public partial class Form1 : Form
     {
         private static Addons Library = new();
-        private static SearchEngine SEwww = new();
+        private static SearchEngine SE = new();
 
         public Form1()
         {
@@ -16,7 +16,9 @@ namespace GUI_7._0
             string FilePath = textBox4.Text;
 
             Library = new Addons(FilePath);
-            SEwww = new SearchEngine(FilePath);
+            SE = new SearchEngine(FilePath);
+
+            SE.ProgressStatusCB += UpdateProgressCB;
 
             AllocConsole();
         }
@@ -33,65 +35,84 @@ namespace GUI_7._0
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private async void button1_Click(object sender, EventArgs e)
         {
-            if (!CheckFile()) return;
+            button1.Enabled = false;
+            label3.Text = "Выполняется...";
 
-            List<PersonData> data;
+            await Task.Run(() => {
+                if (!CheckFile())
+                    {
+                    button1.Enabled = true;
+                    return;
+                }
 
-            GC.Collect();
-            Stopwatch sw = Stopwatch.StartNew();
+                List<PersonData> data;
 
+                GC.Collect();
+                Stopwatch sw = Stopwatch.StartNew();
 
+                string filePath = textBox1.Text.Trim();
 
-            if (checkBox1.Checked)
-            {
-                data = SEwww.SearchInIndexesFile(textBox1.Text.Trim());
-            }
-            else
-            {
-                data = SEwww.SearchInFlatFile(textBox1.Text.Trim());
-            }
+                Console.WriteLine(">>>>>>>>>> submit");
 
-            sw.Stop();
-
-            label3.Text = sw.ElapsedMilliseconds.ToString() + " ms";
-
-            if (data == null)
-            {
-                richTextBox1.Text = "Ошибка получения данных...";
-                return;
-            }
-
-            if (data.Count() == 0)
-            {
-                richTextBox1.Text = "Data not found for key - " + textBox1.Text;
-                return;
-            }
-
-            string buffer = "";
-
-            if(checkBox2.Checked) {
-                var x = data[0];
-                buffer += $"ID: {x.id}\n";
-                buffer += $"ФИО: {x.fio}\n";
-                buffer += $"Группа: {x.group} (Курс: {x.course})\n";
-                buffer += $"Пол: {(x.sex ? 'Ж' : 'М')}\n";
-                buffer += $"==================================\n\n\n";
-            } else {
-                data.ForEach(x =>
+                if (checkBox1.Checked)
                 {
+                    data = SE.SearchInIndexesFile(filePath);
+                }
+                else
+                {
+                    data = SE.SearchInFlatFile(filePath);
+                }
+
+                sw.Stop();
+
+                label3.Text = sw.ElapsedMilliseconds.ToString() + " ms";
+
+                Console.WriteLine(">>>>>>>>>> submit");
+
+                if (data == null)
+                {
+                    richTextBox1.Text = "Ошибка получения данных...";
+                    button1.Enabled = true;
+                    return;
+                }
+
+                if (data.Count() == 0)
+                {
+                    richTextBox1.Text = "Data not found for key - " + textBox1.Text;
+                    button1.Enabled = true;
+                    return;
+                }
+
+                string buffer = $"По запросу {textBox1.Text}:\n\n\n";
+
+                if (checkBox2.Checked)
+                {
+                    var x = data[0];
                     buffer += $"ID: {x.id}\n";
                     buffer += $"ФИО: {x.fio}\n";
                     buffer += $"Группа: {x.group} (Курс: {x.course})\n";
                     buffer += $"Пол: {(x.sex ? 'Ж' : 'М')}\n";
                     buffer += $"==================================\n\n\n";
-                });
-            }
+                }
+                else
+                {
+                    data.ForEach(x =>
+                    {
+                        buffer += $"ID: {x.id}\n";
+                        buffer += $"ФИО: {x.fio}\n";
+                        buffer += $"Группа: {x.group} (Курс: {x.course})\n";
+                        buffer += $"Пол: {(x.sex ? 'Ж' : 'М')}\n";
+                        buffer += $"==================================\n\n\n";
+                    });
+                }
 
-            richTextBox1.Text = buffer;
+                richTextBox1.Text = buffer;
 
-            textBox1.Text = "";
+                textBox1.Text = "";
+                button1.Enabled = true;
+            });
         }
 
         private bool CheckFile()
@@ -115,6 +136,33 @@ namespace GUI_7._0
         private void label4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        public void UpdateProgressCB(int procentage)
+        {
+            Console.WriteLine($"UpdateProgressCB {procentage}");
+
+            if (procentage > 99 || procentage < 1)
+            {
+                //progressBar1.Visible = false;
+                progressBar1.Value = procentage;
+                return;
+            }
+
+            //progressBar1.Visible = true;
+            progressBar1.Value = procentage;
+        }
+
+        public void RefreshProgressBar(int iValue)
+        {
+            if (progressBar1.InvokeRequired)
+            {
+                progressBar1.Invoke(new MethodInvoker(delegate { progressBar1.Value = iValue; }));
+            }
+            else
+            {
+                progressBar1.Value = iValue;
+            }
         }
 
         private void сгенирировать1000СтрокToolStripMenuItem_Click(object sender, EventArgs e)
@@ -165,7 +213,7 @@ namespace GUI_7._0
 
             bool bState = Library.AddLine(textBox2.Text, textBox3.Text, comboBox1.Text, radioButton1.Checked);
 
-            if(!bState)
+            if (!bState)
             {
                 richTextBox1.Text = "Ошибка при добавлении данных...";
                 return;
@@ -199,7 +247,7 @@ namespace GUI_7._0
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
             Library.UpdateFilePath(textBox4.Text);
-            SEwww.UpdateFilePath(textBox4.Text);
+            SE.UpdateFilePath(textBox4.Text);
         }
 
         private void открытьПапкуСФайламиToolStripMenuItem_Click(object sender, EventArgs e)

@@ -1,11 +1,17 @@
-﻿using System.Text;
+﻿using System;
+using System.Text;
 
 namespace Utils
 {
     public class SearchEngine
     {
+        public Action<int>? ProgressStatusCB;
+
         private static string FILE_DATA = "typed_file.txt";
         private static string FILE_INDEXES = "indexes_file.txt";
+
+        static readonly int DELAY = 0;
+        
 
         public SearchEngine()
         {
@@ -24,7 +30,7 @@ namespace Utils
 
         public List<PersonData> SearchInFlatFile(string fio)
         {
-            List<PersonData> returnData = new List<PersonData>();
+            List<PersonData> returnData = new();
 
             if (!File.Exists(FILE_DATA))
             {
@@ -32,33 +38,52 @@ namespace Utils
                 return returnData;
             }
 
+            int CountOfLines = GetCountLineOnFile(FILE_DATA), 
+                x = 0;
+
             using (var reader = new StreamReader(FILE_DATA))
             {
-                int x = 1;
+                
                 string? line;
                 while ((line = reader.ReadLine()) != null)
                 {
-                    PersonData data = new PersonData();
+                    PersonData data = new();
 
                     bool bState = data.ParseData(line);
                     if (!bState)
                     {
-                        Console.WriteLine($"Failed to parse data (Line: {x})");
+                        Console.WriteLine($"Failed to parse data (Line: {x+1})");
                     }
                     else
                     {
                         if (data.GetFullName().Contains(fio))
                         {
-                            Console.WriteLine($"Find on line {x}:\n" + line);
+                            Console.WriteLine($"Find on line {x+1}:\n" + line);
                             returnData.Add(data);
                         }
                     }
 
                     x++;
+
+                    if(ProgressStatusCB != null) ProgressStatusCB(GetPercentage(x, CountOfLines));
+
+                    if(DELAY > 0) Thread.Sleep(DELAY);
                 }
             }
 
             return returnData;
+        }
+
+        public int GetPercentage(int part, int whole)
+        {
+            if (whole == 0)
+            {
+                // Предотвратить деление на ноль, если "whole" равно нулю.
+                return 0;
+            }
+
+            double result = (double)part / whole * 100;
+            return (int)Math.Round(result);
         }
 
         public List<PersonData> SearchInIndexesFile(string fio)
@@ -74,6 +99,10 @@ namespace Utils
             using (var reader = new StreamReader(FILE_INDEXES))
             {
                 string? line;
+                int CountOfLines = GetCountLineOnFile(FILE_INDEXES), x = 0;
+
+
+
                 while ((line = reader.ReadLine()) != null)
                 {
                     string[] data = line.Split(",");
@@ -122,13 +151,36 @@ namespace Utils
                             returnData.Add(person);
                         }
 
+                        
+
                         memoryStream.Close();
                         hFile.Close();
                     }
+
+                    x++;
+
+                    if (ProgressStatusCB != null) ProgressStatusCB(GetPercentage(x, CountOfLines));
+
+                    if (DELAY > 0) Thread.Sleep(DELAY);
                 }
             }
 
             return returnData;
+        }
+
+        public int GetCountLineOnFile(string filePath)
+        {
+            if(File.Exists(filePath))
+            {
+                var file = new StreamReader(filePath).ReadToEnd(); // big string
+                var lines = file.Split(new char[] { '\n' });           // big array
+                if (lines != null)
+                {
+                    return lines.Length;
+                }
+            }
+
+            return 0;
         }
 
         public void UpdateFilePath(string filePath)

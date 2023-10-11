@@ -57,6 +57,7 @@
             textBox4 = new TextBox();
             label10 = new Label();
             checkBox2 = new CheckBox();
+            progressBar1 = new ProgressBar();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -325,11 +326,20 @@
             checkBox2.Text = "Показывать только первый результат";
             checkBox2.UseVisualStyleBackColor = true;
             // 
+            // progressBar1
+            // 
+            progressBar1.Location = new Point(12, 361);
+            progressBar1.Name = "progressBar1";
+            progressBar1.Size = new Size(486, 23);
+            progressBar1.Step = 1;
+            progressBar1.TabIndex = 24;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 431);
+            Controls.Add(progressBar1);
             Controls.Add(checkBox2);
             Controls.Add(label10);
             Controls.Add(textBox4);
@@ -396,5 +406,6 @@
         private ToolStripMenuItem создатьПустойФайлToolStripMenuItem;
         private ToolStripMenuItem открытьПапкуСФайламиToolStripMenuItem;
         private CheckBox checkBox2;
+        private ProgressBar progressBar1;
     }
 }
