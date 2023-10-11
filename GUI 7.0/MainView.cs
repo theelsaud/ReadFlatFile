@@ -4,12 +4,24 @@ using Utils;
 
 namespace GUI_7._0
 {
-    public partial class Form1 : Form
+    public partial class MainView : Form
     {
         private static Addons Library = new();
         private static SearchEngine SE = new();
 
-        public Form1()
+        [DllImport("kernel32.dll")]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        static extern bool AllocConsole();
+
+        private void êîíñîëüToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            AllocConsole();
+
+            Console.WriteLine("Console is open!");
+            //Console.SetOut(new ());
+        }
+
+        public MainView()
         {
             InitializeComponent();
 
@@ -20,19 +32,7 @@ namespace GUI_7._0
 
             SE.ProgressStatusCB += UpdateProgressCB;
 
-            AllocConsole();
-        }
-
-
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
+            //AllocConsole();
         }
 
         private async void button1_Click(object sender, EventArgs e)
@@ -40,9 +40,10 @@ namespace GUI_7._0
             button1.Enabled = false;
             label3.Text = "Âûïîëíÿåòñÿ...";
 
-            await Task.Run(() => {
+            await Task.Run(() =>
+            {
                 if (!CheckFile())
-                    {
+                {
                     button1.Enabled = true;
                     return;
                 }
@@ -110,7 +111,7 @@ namespace GUI_7._0
 
                 richTextBox1.Text = buffer;
 
-                textBox1.Text = "";
+                //textBox1.Text = "";
                 button1.Enabled = true;
             });
         }
@@ -126,16 +127,6 @@ namespace GUI_7._0
             }
 
             return true;
-        }
-
-        private void ôàéëToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
         }
 
         public void UpdateProgressCB(int procentage)
@@ -171,23 +162,6 @@ namespace GUI_7._0
             Library.GenerateData(1000);
         }
 
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-        }
-
-        public void êîíñîëüToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AllocConsole();
-        }
-
-        [DllImport("kernel32.dll", SetLastError = true)]
-        [return: MarshalAs(UnmanagedType.Bool)]
-        static extern bool AllocConsole();
-
         private void ñãåíèğèğîâàòü1ÌÑòğîêToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Library.ClearData();
@@ -198,11 +172,6 @@ namespace GUI_7._0
         {
             Console.WriteLine("ClearData");
             Library.ClearData();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -228,16 +197,6 @@ namespace GUI_7._0
             comboBox1.TabIndex = 0;
         }
 
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void ñîçäàòüÏóñòîéÔàéëToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FileStream hFile = File.Create(textBox4.Text);
@@ -254,5 +213,11 @@ namespace GUI_7._0
         {
             Process.Start("explorer.exe", Environment.CurrentDirectory);
         }
-    }
+
+        private void îÏğîãğàììåToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new AboutView().Show();
+        }
+
+    }  
 }

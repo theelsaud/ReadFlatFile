@@ -1,6 +1,6 @@
 ﻿namespace GUI_7._0
 {
-    partial class Form1
+    partial class MainView
     {
         /// <summary>
         ///  Required designer variable.
@@ -48,6 +48,7 @@
             сгенирировать1МСтрокToolStripMenuItem = new ToolStripMenuItem();
             создатьПустойФайлToolStripMenuItem = new ToolStripMenuItem();
             открытьПапкуСФайламиToolStripMenuItem = new ToolStripMenuItem();
+            оПрограммеToolStripMenuItem = new ToolStripMenuItem();
             label7 = new Label();
             label8 = new Label();
             comboBox1 = new ComboBox();
@@ -58,6 +59,7 @@
             label10 = new Label();
             checkBox2 = new CheckBox();
             progressBar1 = new ProgressBar();
+            консольToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -99,7 +101,6 @@
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(197, 23);
             textBox3.TabIndex = 9;
-            textBox3.TextChanged += textBox3_TextChanged;
             // 
             // label4
             // 
@@ -110,7 +111,6 @@
             label4.Size = new Size(167, 21);
             label4.TabIndex = 10;
             label4.Text = "Добавление записи";
-            label4.Click += label4_Click;
             // 
             // label5
             // 
@@ -149,7 +149,6 @@
             label3.Size = new Size(32, 15);
             label3.TabIndex = 6;
             label3.Text = "0 ms";
-            label3.Click += label3_Click;
             // 
             // label2
             // 
@@ -184,7 +183,7 @@
             // 
             menuStrip1.BackColor = SystemColors.Control;
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { файлToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { файлToolStripMenuItem, оПрограммеToolStripMenuItem, консольToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(800, 24);
@@ -197,7 +196,6 @@
             файлToolStripMenuItem.Name = "файлToolStripMenuItem";
             файлToolStripMenuItem.Size = new Size(48, 20);
             файлToolStripMenuItem.Text = "Файл";
-            файлToolStripMenuItem.Click += файлToolStripMenuItem_Click;
             // 
             // очиститьДанныеToolStripMenuItem
             // 
@@ -234,6 +232,13 @@
             открытьПапкуСФайламиToolStripMenuItem.Text = "Открыть папку с файлами";
             открытьПапкуСФайламиToolStripMenuItem.Click += открытьПапкуСФайламиToolStripMenuItem_Click;
             // 
+            // оПрограммеToolStripMenuItem
+            // 
+            оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
+            оПрограммеToolStripMenuItem.Size = new Size(94, 20);
+            оПрограммеToolStripMenuItem.Text = "О программе";
+            оПрограммеToolStripMenuItem.Click += оПрограммеToolStripMenuItem_Click;
+            // 
             // label7
             // 
             label7.AutoSize = true;
@@ -261,7 +266,6 @@
             comboBox1.Size = new Size(66, 23);
             comboBox1.TabIndex = 17;
             comboBox1.Text = "1";
-            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // label9
             // 
@@ -282,7 +286,6 @@
             radioButton1.TabStop = true;
             radioButton1.Text = "Жен.";
             radioButton1.UseVisualStyleBackColor = true;
-            radioButton1.CheckedChanged += radioButton1_CheckedChanged;
             // 
             // radioButton2
             // 
@@ -294,7 +297,6 @@
             radioButton2.TabStop = true;
             radioButton2.Text = "Муж.";
             radioButton2.UseVisualStyleBackColor = true;
-            radioButton2.CheckedChanged += radioButton2_CheckedChanged;
             // 
             // textBox4
             // 
@@ -334,7 +336,14 @@
             progressBar1.Step = 1;
             progressBar1.TabIndex = 24;
             // 
-            // Form1
+            // консольToolStripMenuItem
+            // 
+            консольToolStripMenuItem.Name = "консольToolStripMenuItem";
+            консольToolStripMenuItem.Size = new Size(66, 20);
+            консольToolStripMenuItem.Text = "Консоль";
+            консольToolStripMenuItem.Click += консольToolStripMenuItem_Click_1;
+            // 
+            // MainView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -367,9 +376,8 @@
             MaximizeBox = false;
             MaximumSize = new Size(816, 470);
             MinimumSize = new Size(816, 470);
-            Name = "Form1";
+            Name = "MainView";
             Text = "Flat File v0.1";
-            Load += Form1_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);
@@ -407,5 +415,7 @@
         private ToolStripMenuItem открытьПапкуСФайламиToolStripMenuItem;
         private CheckBox checkBox2;
         private ProgressBar progressBar1;
+        private ToolStripMenuItem оПрограммеToolStripMenuItem;
+        private ToolStripMenuItem консольToolStripMenuItem;
     }
 }
