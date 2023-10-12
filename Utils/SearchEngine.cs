@@ -12,7 +12,6 @@ namespace Utils
 
         static readonly int DELAY = 0;
         
-
         public SearchEngine()
         {
         }
@@ -30,7 +29,7 @@ namespace Utils
 
         public List<PersonData> SearchInFlatFile(string fio)
         {
-            List<PersonData> returnData = new();
+            List<PersonData> returnData = new ();
 
             if (!File.Exists(FILE_DATA))
             {
@@ -88,7 +87,7 @@ namespace Utils
 
         public List<PersonData> SearchInIndexesFile(string fio)
         {
-            List<PersonData> returnData = new List<PersonData>();
+            List<PersonData> returnData = new ();
 
             if (!File.Exists(FILE_INDEXES))
             {
@@ -100,8 +99,6 @@ namespace Utils
             {
                 string? line;
                 int CountOfLines = GetCountLineOnFile(FILE_INDEXES), x = 0;
-
-
 
                 while ((line = reader.ReadLine()) != null)
                 {

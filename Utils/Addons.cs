@@ -58,19 +58,19 @@ namespace Utils
             Console.WriteLine("> Utils Inited!");
         }
 
-        static void Shuffle<T>(List<T> list)
-        {
-            Random rng = new Random();
-            int n = list.Count;
-            while (n > 1)
-            {
-                n--;
-                int k = rng.Next(n + 1);
-                T value = list[k];
-                list[k] = list[n];
-                list[n] = value;
-            }
-        }
+        //static void Shuffle<T>(List<T> list)
+        //{
+        //    Random rng = new Random();
+        //    int n = list.Count;
+        //    while (n > 1)
+        //    {
+        //        n--;
+        //        int k = rng.Next(n + 1);
+        //        T value = list[k];
+        //        list[k] = list[n];
+        //        list[n] = value;
+        //    }
+        //}
 
         //public static string GenerateUniqueId()
         //{
@@ -103,7 +103,7 @@ namespace Utils
 
         public static int GetRandomInt(int min = 0, int max = 100)
         {
-            Random number = new Random();
+            Random number = new ();
             return number.Next(min, max);
         }
 
@@ -125,14 +125,14 @@ namespace Utils
             return data[GetRandomInt(0, data.Count - 1)];
         }
 
-        public void GenerateData(int Lines = 1000)
+        public  void GenerateData(int Lines = 1000)
         {
             Console.WriteLine($"> Running Generating data: {Lines} lines");
 
             GC.Collect();
             Stopwatch sw = Stopwatch.StartNew();
 
-            List<PersonData> data = new List<PersonData>();
+            List<PersonData> data = new();
 
             int x = 0;
             while (x < Lines)
@@ -173,7 +173,7 @@ namespace Utils
 
             string[] lines = File.ReadAllLines(FileData);
 
-            PersonData data = new PersonData();
+            PersonData data = new();
 
             int id = 0;
 

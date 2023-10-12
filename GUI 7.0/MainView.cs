@@ -9,21 +9,32 @@ namespace GUI_7._0
         private static Addons Library = new();
         private static SearchEngine SE = new();
 
-        [DllImport("kernel32.dll")]
-        [return: MarshalAs(UnmanagedType.Bool)]
-        static extern bool AllocConsole();
+        //[DllImport("kernel32.dll")]
+        //[return: MarshalAs(UnmanagedType.Bool)]
+        //static extern bool AllocConsole();
 
         private void консольToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            AllocConsole();
+            Debug.WriteLine(Thread.CurrentThread.ManagedThreadId);
 
-            Console.WriteLine("Console is open!");
-            //Console.SetOut(new ());
+            if (NativeMethods.AllocConsole())
+            {
+                IntPtr s = NativeMethods.GetStdHanle(NativeMethods.sr);
+                Console.WriteLine("ASD");
+            }
+            else
+            {
+                Console.WriteLine("AC");
+            }
         }
 
         public MainView()
         {
             InitializeComponent();
+
+            Debug.WriteLine(Thread.CurrentThread.ManagedThreadId);
+
+            //NativeMethods.AllocConsole();
 
             string FilePath = textBox4.Text;
 
@@ -31,8 +42,6 @@ namespace GUI_7._0
             SE = new SearchEngine(FilePath);
 
             SE.ProgressStatusCB += UpdateProgressCB;
-
-            //AllocConsole();
         }
 
         private async void button1_Click(object sender, EventArgs e)
@@ -50,12 +59,10 @@ namespace GUI_7._0
 
                 List<PersonData> data;
 
-                GC.Collect();
-                Stopwatch sw = Stopwatch.StartNew();
-
                 string filePath = textBox1.Text.Trim();
 
-                Console.WriteLine(">>>>>>>>>> submit");
+                GC.Collect();
+                Stopwatch sw = Stopwatch.StartNew();
 
                 if (checkBox1.Checked)
                 {
@@ -69,8 +76,6 @@ namespace GUI_7._0
                 sw.Stop();
 
                 label3.Text = sw.ElapsedMilliseconds.ToString() + " ms";
-
-                Console.WriteLine(">>>>>>>>>> submit");
 
                 if (data == null)
                 {
@@ -86,7 +91,7 @@ namespace GUI_7._0
                     return;
                 }
 
-                string buffer = $"По запросу {textBox1.Text}:\n\n\n";
+                string buffer = $"По запросу {textBox1.Text} найдено {data.Count()} записей:\n\n\n";
 
                 if (checkBox2.Checked)
                 {
@@ -219,5 +224,17 @@ namespace GUI_7._0
             new AboutView().Show();
         }
 
-    }  
+    }
+
+    public partial class NativeMethods
+    {
+        public static Int32 sr = -11;
+
+        [DllImport("kernel32.dll", EntryPoint = "GetStdHandle")]
+        public static extern IntPtr GetStdHanle(Int32 st);
+
+        [DllImport("kernel32.dll", EntryPoint = "AllocConsole")]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        public static extern bool AllocConsole();
+    }
 }

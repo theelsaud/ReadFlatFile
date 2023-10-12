@@ -49,6 +49,7 @@
             создатьПустойФайлToolStripMenuItem = new ToolStripMenuItem();
             открытьПапкуСФайламиToolStripMenuItem = new ToolStripMenuItem();
             оПрограммеToolStripMenuItem = new ToolStripMenuItem();
+            консольToolStripMenuItem = new ToolStripMenuItem();
             label7 = new Label();
             label8 = new Label();
             comboBox1 = new ComboBox();
@@ -59,7 +60,6 @@
             label10 = new Label();
             checkBox2 = new CheckBox();
             progressBar1 = new ProgressBar();
-            консольToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -67,7 +67,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 21.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(670, 2);
+            label1.Location = new Point(674, 0);
             label1.Name = "label1";
             label1.Size = new Size(114, 40);
             label1.TabIndex = 1;
@@ -239,10 +239,17 @@
             оПрограммеToolStripMenuItem.Text = "О программе";
             оПрограммеToolStripMenuItem.Click += оПрограммеToolStripMenuItem_Click;
             // 
+            // консольToolStripMenuItem
+            // 
+            консольToolStripMenuItem.Name = "консольToolStripMenuItem";
+            консольToolStripMenuItem.Size = new Size(66, 20);
+            консольToolStripMenuItem.Text = "Консоль";
+            консольToolStripMenuItem.Click += консольToolStripMenuItem_Click_1;
+            // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(757, 39);
+            label7.Location = new Point(753, 39);
             label7.Name = "label7";
             label7.Size = new Size(28, 15);
             label7.TabIndex = 14;
@@ -335,13 +342,6 @@
             progressBar1.Size = new Size(486, 23);
             progressBar1.Step = 1;
             progressBar1.TabIndex = 24;
-            // 
-            // консольToolStripMenuItem
-            // 
-            консольToolStripMenuItem.Name = "консольToolStripMenuItem";
-            консольToolStripMenuItem.Size = new Size(66, 20);
-            консольToolStripMenuItem.Text = "Консоль";
-            консольToolStripMenuItem.Click += консольToolStripMenuItem_Click_1;
             // 
             // MainView
             // 

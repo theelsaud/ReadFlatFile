@@ -59,7 +59,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(12, 215);
+            label2.Location = new Point(419, 108);
             label2.Name = "label2";
             label2.Size = new Size(31, 15);
             label2.TabIndex = 17;
@@ -68,7 +68,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(12, 29);
+            label3.Location = new Point(12, 20);
             label3.Name = "label3";
             label3.Size = new Size(49, 15);
             label3.TabIndex = 18;
@@ -105,7 +105,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(462, 239);
+            ClientSize = new Size(462, 137);
             Controls.Add(label6);
             Controls.Add(label5);
             Controls.Add(label4);
@@ -114,9 +114,7 @@
             Controls.Add(label7);
             Controls.Add(label1);
             MaximizeBox = false;
-            MaximumSize = new Size(478, 278);
             MinimizeBox = false;
-            MinimumSize = new Size(478, 278);
             Name = "AboutView";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AboutView";
