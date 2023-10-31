@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Utils
 {
@@ -6,7 +7,7 @@ namespace Utils
     {
         private const string SPLITSYMBOL = "\t|\t"; // 3 bytes
 
-        private enum Position
+        public enum Position
         {
             ID = 0,
             COURSE,
@@ -15,6 +16,33 @@ namespace Utils
             FIO,
             COUNT
         }
+
+        public static readonly string[] PositionNames = new string[]
+        {
+            "ID",
+            "Курс",
+            "Группа",
+            "Пол",
+            "ФИО"
+        };
+
+        public enum Operator
+        {
+            Equals = 0,
+            GreaterThan = 1,
+            LessThan = 2
+        }
+
+        public struct ValidateData
+        {
+            public Position Pos;
+            //public Operator Operator = Operator.Equals;
+            public string SearchString;
+
+            public ValidateData() { }
+        }
+
+        private string[] InputString;
 
         public string id { get; private set; }
         public string fio { get; private set; }
@@ -30,6 +58,7 @@ namespace Utils
             group = "";
             course = "";
         }
+
         public PersonData(string person, bool sex, int x)
         {
             this.sex = sex;
@@ -57,20 +86,20 @@ namespace Utils
 
         public bool ParseData(string line)
         {
-            string[] subs = line.Split(SPLITSYMBOL);
+            InputString = line.Split(SPLITSYMBOL);
 
             // Проверяем, что кол-во позиции совпадает
-            if(subs.Length != Enum.GetNames(typeof(Position)).Length)
+            if (InputString.Length != Enum.GetNames(typeof(Position)).Length)
             {
-                Console.WriteLine(subs.Length);
+                Console.WriteLine(InputString.Length);
                 return false;
             }
 
-            id = subs[(int)Position.ID].Trim();
-            fio = subs[(int)Position.FIO].Trim();
-            sex = subs[(int)Position.SEX].Trim() == "М";
-            group = subs[(int)Position.GROUP].Trim();
-            course = subs[(int)Position.COURSE].Trim();
+            id = GetStringByPos(Position.ID);
+            fio = GetStringByPos(Position.FIO);
+            sex = GetStringByPos(Position.SEX) == "М";
+            group = GetStringByPos(Position.GROUP);
+            course = GetStringByPos(Position.COURSE);
 
             return true;
         }
@@ -83,11 +112,36 @@ namespace Utils
 
         public readonly string ExportData()
         {
-            return id.PadLeft(8, '0') 
+            return id.PadLeft(8, '0')
                 + SPLITSYMBOL + group.PadRight(4)
                 + SPLITSYMBOL + course.PadRight(4)
                 + SPLITSYMBOL + (sex ? "M" : "Ж").PadRight(4)
                 + SPLITSYMBOL + fio.PadRight(50) + SPLITSYMBOL;
+        }
+
+        public bool SearchValided(List<ValidateData> hValidList, bool bAND)
+        {
+            if (hValidList == null) return true;
+
+            List<bool> bState = new();
+
+            foreach (ValidateData v in hValidList)
+            {
+                string data = GetStringByPos(v.Pos);
+
+                if (data == v.SearchString.Trim()) bState.Add(true);
+            }
+
+            if(bAND) {
+                return hValidList.Count() == bState.Count();
+            } else {
+                return bState.Count() > 0;
+            }
+        }
+
+        public string GetStringByPos(Position pos)
+        {
+            return InputString[(int)pos].Trim();
         }
 
         public readonly string GetFullName()

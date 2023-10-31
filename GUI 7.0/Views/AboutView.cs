@@ -16,5 +16,10 @@ namespace GUI_7._0
         {
             InitializeComponent();
         }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

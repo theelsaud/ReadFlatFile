@@ -44,7 +44,8 @@
             label7.Name = "label7";
             label7.Size = new Size(28, 15);
             label7.TabIndex = 16;
-            label7.Text = "v0.1";
+            label7.Text = "v0.2";
+            label7.Click += label7_Click;
             // 
             // label1
             // 

@@ -50,6 +50,7 @@
             открытьПапкуСФайламиToolStripMenuItem = new ToolStripMenuItem();
             оПрограммеToolStripMenuItem = new ToolStripMenuItem();
             консольToolStripMenuItem = new ToolStripMenuItem();
+            поискПоАтрибутамToolStripMenuItem = new ToolStripMenuItem();
             label7 = new Label();
             label8 = new Label();
             comboBox1 = new ComboBox();
@@ -183,7 +184,7 @@
             // 
             menuStrip1.BackColor = SystemColors.Control;
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { файлToolStripMenuItem, оПрограммеToolStripMenuItem, консольToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { файлToolStripMenuItem, оПрограммеToolStripMenuItem, консольToolStripMenuItem, поискПоАтрибутамToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(800, 24);
@@ -244,7 +245,15 @@
             консольToolStripMenuItem.Name = "консольToolStripMenuItem";
             консольToolStripMenuItem.Size = new Size(66, 20);
             консольToolStripMenuItem.Text = "Консоль";
+            консольToolStripMenuItem.Visible = false;
             консольToolStripMenuItem.Click += консольToolStripMenuItem_Click_1;
+            // 
+            // поискПоАтрибутамToolStripMenuItem
+            // 
+            поискПоАтрибутамToolStripMenuItem.Name = "поискПоАтрибутамToolStripMenuItem";
+            поискПоАтрибутамToolStripMenuItem.Size = new Size(132, 20);
+            поискПоАтрибутамToolStripMenuItem.Text = "Поиск по атрибутам";
+            поискПоАтрибутамToolStripMenuItem.Click += поискПоАтрибутамToolStripMenuItem_Click;
             // 
             // label7
             // 
@@ -253,7 +262,7 @@
             label7.Name = "label7";
             label7.Size = new Size(28, 15);
             label7.TabIndex = 14;
-            label7.Text = "v0.1";
+            label7.Text = "v0.2";
             // 
             // label8
             // 
@@ -417,5 +426,6 @@
         private ProgressBar progressBar1;
         private ToolStripMenuItem оПрограммеToolStripMenuItem;
         private ToolStripMenuItem консольToolStripMenuItem;
+        private ToolStripMenuItem поискПоАтрибутамToolStripMenuItem;
     }
 }

@@ -1,3 +1,4 @@
+using GUI_7._0.Views;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using Utils;
@@ -224,6 +225,10 @@ namespace GUI_7._0
             new AboutView().Show();
         }
 
+        private void ïîèñêÏîÀòğèáóòàìToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new SearchAttributes().Show();
+        }
     }
 
     public partial class NativeMethods

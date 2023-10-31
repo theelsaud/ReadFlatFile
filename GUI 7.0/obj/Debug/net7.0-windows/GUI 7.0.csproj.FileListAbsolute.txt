@@ -18,3 +18,7 @@ D:\GitHub\C#\ReadFlatFileGitHub\GUI 7.0\obj\Debug\net7.0-windows\refint\GUI 7.0.
 D:\GitHub\C#\ReadFlatFileGitHub\GUI 7.0\obj\Debug\net7.0-windows\GUI 7.0.pdb
 D:\GitHub\C#\ReadFlatFileGitHub\GUI 7.0\obj\Debug\net7.0-windows\GUI 7.0.genruntimeconfig.cache
 D:\GitHub\C#\ReadFlatFileGitHub\GUI 7.0\obj\Debug\net7.0-windows\ref\GUI 7.0.dll
+D:\GitHub\C#\ReadFlatFileGitHub\GUI 7.0\obj\Debug\net7.0-windows\GUI_7._0.MainView.resources
+D:\GitHub\C#\ReadFlatFileGitHub\GUI 7.0\obj\Debug\net7.0-windows\GUI_7._0.Properties.Resources.resources
+D:\GitHub\C#\ReadFlatFileGitHub\GUI 7.0\obj\Debug\net7.0-windows\GUI_7._0.AboutView.resources
+D:\GitHub\C#\ReadFlatFileGitHub\GUI 7.0\obj\Debug\net7.0-windows\GUI_7._0.Views.SearchAttributes.resources
