@@ -8,16 +8,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Utils;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 using static Utils.PersonData;
 
 namespace GUI_7._0.Views
 {
     public partial class SearchAttributes : Form
     {
+        MainView hView;
+        SearchEngine SE = new SearchEngine();
         List<TextBox> textBoxes = new List<TextBox>();
 
-        public SearchAttributes()
+        public SearchAttributes(MainView mainView)
         {
+            hView = mainView;
+            SE = mainView.GetSearchEngine();
             InitializeComponent();
 
             LoadFields();
@@ -56,14 +61,31 @@ namespace GUI_7._0.Views
         {
             string buf = "";
 
+            int i = 0;
+            List<PersonData.ValidateData> hList = new();
+
             foreach (TextBox textBox in textBoxes)
             {
                 string value = textBox.Text;
 
+                if(value != "")
+                {
+                    PersonData.ValidateData SObj = new();
+                    SObj.Pos = (PersonData.Position)i;
+                    SObj.SearchString = value;
+
+                    hList.Add(SObj);
+                }
+
                 buf += value + "\n";
+                i++;
             }
 
-            MessageBox.Show(buf);
+            List<PersonData> hFiltered = SE.SearchFiltered(hList, radioButton1.Checked);
+
+            string buffer = $"По запросу {textBox1.Text} найдено {hFiltered.Count()} записей:\n\n\n";
+
+            hView.GetRichTextBox().Text = buffer;
         }
     }
 }

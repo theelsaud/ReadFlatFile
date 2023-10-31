@@ -85,6 +85,53 @@ namespace Utils
             return (int)Math.Round(result);
         }
 
+        public List<PersonData> SearchFiltered(List<PersonData.ValidateData> hList, bool bAND)
+        {
+            List<PersonData> returnData = new();
+
+            if (!File.Exists(FILE_DATA))
+            {
+                Console.WriteLine("File not found " + FILE_DATA);
+                return returnData;
+            }
+
+            int CountOfLines = GetCountLineOnFile(FILE_DATA),
+                x = 0;
+
+            using (var reader = new StreamReader(FILE_DATA))
+            {
+
+                string? line;
+                while ((line = reader.ReadLine()) != null)
+                {
+                    PersonData data = new();
+
+                    bool bState = data.ParseData(line);
+                    if (!bState)
+                    {
+                        Console.WriteLine($"Failed to parse data (Line: {x + 1})");
+                    }
+                    else
+                    {
+                        if (data.SearchValided(hList, bAND))
+                        {
+                            Console.WriteLine($"Find on line {x + 1}:\n" + line);
+                            returnData.Add(data);
+                        }
+                    }
+
+                    x++;
+
+                    if (ProgressStatusCB != null) ProgressStatusCB(GetPercentage(x, CountOfLines));
+
+                    if (DELAY > 0) Thread.Sleep(DELAY);
+                }
+            }
+
+
+            return returnData;
+        }
+
         public List<PersonData> SearchInIndexesFile(string fio)
         {
             List<PersonData> returnData = new ();
@@ -184,5 +231,7 @@ namespace Utils
         {
             FILE_DATA = filePath;
         }
+
+        public string GetFilePath() { return FILE_DATA;}
     }
 }

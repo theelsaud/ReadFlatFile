@@ -7,8 +7,8 @@ namespace GUI_7._0
 {
     public partial class MainView : Form
     {
-        private static Addons Library = new();
-        private static SearchEngine SE = new();
+        public static Addons Library = new();
+        public static SearchEngine SE = new();
 
         //[DllImport("kernel32.dll")]
         //[return: MarshalAs(UnmanagedType.Bool)]
@@ -227,7 +227,17 @@ namespace GUI_7._0
 
         private void ÔÓËÒÍœÓ¿ÚË·ÛÚ‡ÏToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new SearchAttributes().Show();
+            new SearchAttributes(this).Show();
+        }
+
+        public RichTextBox GetRichTextBox()
+        {
+            return richTextBox1;
+        }
+
+        public SearchEngine GetSearchEngine()
+        {
+            return SE;
         }
     }
 
