@@ -1,4 +1,4 @@
-﻿namespace GUI_7._0.Views
+﻿namespace GUI.Views
 {
     partial class SearchAttributes
     {

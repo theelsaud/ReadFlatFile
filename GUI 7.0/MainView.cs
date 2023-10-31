@@ -1,9 +1,10 @@
-using GUI_7._0.Views;
+using GUI.Views;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using Utils;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
-namespace GUI_7._0
+namespace GUI
 {
     public partial class MainView : Form
     {
@@ -35,7 +36,7 @@ namespace GUI_7._0
 
             Debug.WriteLine(Thread.CurrentThread.ManagedThreadId);
 
-            //NativeMethods.AllocConsole();
+            NativeMethods.AllocConsole();
 
             string FilePath = textBox4.Text;
 
@@ -76,7 +77,7 @@ namespace GUI_7._0
 
                 sw.Stop();
 
-                label3.Text = sw.ElapsedMilliseconds.ToString() + " ms";
+                UpdateRunTime(sw.ElapsedMilliseconds.ToString());
 
                 if (data == null)
                 {
@@ -96,30 +97,58 @@ namespace GUI_7._0
 
                 if (checkBox2.Checked)
                 {
-                    var x = data[0];
-                    buffer += $"ID: {x.id}\n";
-                    buffer += $"ФИО: {x.fio}\n";
-                    buffer += $"Группа: {x.group} (Курс: {x.course})\n";
-                    buffer += $"Пол: {(x.sex ? 'Ж' : 'М')}\n";
-                    buffer += $"==================================\n\n\n";
-                }
-                else
-                {
-                    data.ForEach(x =>
+                    if(data.Count() > 1)
                     {
-                        buffer += $"ID: {x.id}\n";
-                        buffer += $"ФИО: {x.fio}\n";
-                        buffer += $"Группа: {x.group} (Курс: {x.course})\n";
-                        buffer += $"Пол: {(x.sex ? 'Ж' : 'М')}\n";
-                        buffer += $"==================================\n\n\n";
-                    });
+                        data.RemoveRange(1, data.Count - 1);
+                    }
                 }
 
-                richTextBox1.Text = buffer;
+                ShowResult(buffer, data);
+
+                //richTextBox1.Text = ShowResult(buffer, data);
 
                 //textBox1.Text = "";
                 button1.Enabled = true;
             });
+        }
+
+        public void UpdateRunTime(string time)
+        {
+            label3.Text = time + " ms";
+        }
+
+        public string ShowResult(string buffer, List<PersonData> data)
+        {
+            string buf = buffer;
+            //data.ForEach(x =>
+            //{
+            //    buffer += $"ID: {x.id}\n";
+            //    buffer += $"ФИО: {x.fio}\n";
+            //    buffer += $"Группа: {x.group} (Курс: {x.course})\n";
+            //    buffer += $"Пол: {(x.sex ? 'Ж' : 'М')}\n";
+            //    buffer += $"==================================\n\n\n";
+            //});
+
+            if(data == null || data.Count() == 0) {
+                richTextBox1.Text = "Data 0 list";
+                return buf;
+            }
+
+            data.ForEach(x =>
+            {
+                for(int i = 0; i < (int)PersonData.Position.COUNT; i++)
+                {
+                    buf += $"{PersonData.PositionNames[i]}: {x.GetStringByPos((PersonData.Position)i)}\n";
+                }
+
+                buf += $"==================================\n\n\n";
+            });
+
+            Console.WriteLine(buf);
+
+            richTextBox1.Text = buf;
+
+            return buf;
         }
 
         private bool CheckFile()

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GUI_7._0
+namespace GUI
 {
     public partial class AboutView : Form
     {

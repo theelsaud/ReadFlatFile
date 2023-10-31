@@ -88,6 +88,11 @@ namespace Utils
         {
             InputString = line.Split(SPLITSYMBOL);
 
+            for(int i = 0; i < InputString.Length; i++)
+            {
+                InputString[i] = InputString[i].Trim();
+            }
+
             // Проверяем, что кол-во позиции совпадает
             if (InputString.Length != Enum.GetNames(typeof(Position)).Length)
             {
@@ -115,7 +120,7 @@ namespace Utils
             return id.PadLeft(8, '0')
                 + SPLITSYMBOL + group.PadRight(4)
                 + SPLITSYMBOL + course.PadRight(4)
-                + SPLITSYMBOL + (sex ? "M" : "Ж").PadRight(4)
+                + SPLITSYMBOL + (sex ? "М" : "Ж").PadRight(4)
                 + SPLITSYMBOL + fio.PadRight(50) + SPLITSYMBOL;
         }
 
@@ -129,7 +134,9 @@ namespace Utils
             {
                 string data = GetStringByPos(v.Pos);
 
-                if (data == v.SearchString.Trim()) bState.Add(true);
+                if(v.SearchString.Trim() == data) bState.Add(true);
+
+                Console.WriteLine($"{v.SearchString.Trim() == data} | {data} - {v.SearchString.Trim()}");
             }
 
             if(bAND) {

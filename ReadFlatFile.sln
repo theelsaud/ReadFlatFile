@@ -5,7 +5,7 @@ VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Utils", "Utils\Utils.csproj", "{A10E8853-C4B1-4E0D-B3DF-159F5AD760AC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GUI 7.0", "GUI 7.0\GUI 7.0.csproj", "{7BFEC412-3CF5-40FB-8FF2-2BDB464764AB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GUI", "GUI 7.0\GUI.csproj", "{7BFEC412-3CF5-40FB-8FF2-2BDB464764AB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

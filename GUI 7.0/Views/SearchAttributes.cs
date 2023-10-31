@@ -11,13 +11,13 @@ using Utils;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 using static Utils.PersonData;
 
-namespace GUI_7._0.Views
+namespace GUI.Views
 {
     public partial class SearchAttributes : Form
     {
-        MainView hView;
-        SearchEngine SE = new SearchEngine();
-        List<TextBox> textBoxes = new List<TextBox>();
+        private MainView hView;
+        private SearchEngine SE = new SearchEngine();
+        private List<TextBox> textBoxes = new List<TextBox>();
 
         public SearchAttributes(MainView mainView)
         {
@@ -83,9 +83,9 @@ namespace GUI_7._0.Views
 
             List<PersonData> hFiltered = SE.SearchFiltered(hList, radioButton1.Checked);
 
-            string buffer = $"По запросу {textBox1.Text} найдено {hFiltered.Count()} записей:\n\n\n";
+            string buffer = $"Поиск по инвертированному списку: найдено {hFiltered.Count()} записей:\n\n\n";
 
-            hView.GetRichTextBox().Text = buffer;
+            hView.ShowResult(buffer, hFiltered);
         }
     }
 }

@@ -1,4 +1,4 @@
-namespace GUI_7._0
+namespace GUI
 {
     internal static class Program
     {
