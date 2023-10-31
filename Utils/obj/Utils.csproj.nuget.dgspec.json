@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\GitHub\\C#\\ReadFlatFileGitHub\\Utils\\Utils.csproj": {}
+    "C:\\Users\\muxa1\\Desktop\\Desktop\\GitHub\\ReadFlatFile\\Utils\\Utils.csproj": {}
   },
   "projects": {
-    "D:\\GitHub\\C#\\ReadFlatFileGitHub\\Utils\\Utils.csproj": {
+    "C:\\Users\\muxa1\\Desktop\\Desktop\\GitHub\\ReadFlatFile\\Utils\\Utils.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GitHub\\C#\\ReadFlatFileGitHub\\Utils\\Utils.csproj",
+        "projectUniqueName": "C:\\Users\\muxa1\\Desktop\\Desktop\\GitHub\\ReadFlatFile\\Utils\\Utils.csproj",
         "projectName": "Utils",
-        "projectPath": "D:\\GitHub\\C#\\ReadFlatFileGitHub\\Utils\\Utils.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\GitHub\\C#\\ReadFlatFileGitHub\\Utils\\obj\\",
+        "projectPath": "C:\\Users\\muxa1\\Desktop\\Desktop\\GitHub\\ReadFlatFile\\Utils\\Utils.csproj",
+        "packagesPath": "C:\\Users\\muxa1\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\muxa1\\Desktop\\Desktop\\GitHub\\ReadFlatFile\\Utils\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\muxa1\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -55,7 +55,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

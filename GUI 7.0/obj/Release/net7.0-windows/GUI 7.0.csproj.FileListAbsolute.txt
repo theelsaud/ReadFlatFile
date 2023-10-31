@@ -81,3 +81,26 @@ D:\GitHub\C#\ReadFlatFileGitHub\GUI 7.0\obj\Release\net7.0-windows\GUI_7._0.Abou
 D:\GitHub\C#\ReadFlatFileGitHub\GUI 7.0\obj\Release\net7.0-windows\GUI_7._0.MainView.resources
 D:\GitHub\C#\ReadFlatFileGitHub\GUI 7.0\obj\Release\net7.0-windows\GUI_7._0.Properties.Resources.resources
 D:\GitHub\C#\ReadFlatFileGitHub\GUI 7.0\obj\Release\net7.0-windows\GUI_7._0.Views.SearchAttributes.resources
+C:\Users\muxa1\Desktop\Desktop\GitHub\ReadFlatFile\GUI 7.0\bin\Release\net7.0-windows\GUI 7.0.exe
+C:\Users\muxa1\Desktop\Desktop\GitHub\ReadFlatFile\GUI 7.0\bin\Release\net7.0-windows\GUI 7.0.deps.json
+C:\Users\muxa1\Desktop\Desktop\GitHub\ReadFlatFile\GUI 7.0\bin\Release\net7.0-windows\GUI 7.0.runtimeconfig.json
+C:\Users\muxa1\Desktop\Desktop\GitHub\ReadFlatFile\GUI 7.0\bin\Release\net7.0-windows\GUI 7.0.dll
+C:\Users\muxa1\Desktop\Desktop\GitHub\ReadFlatFile\GUI 7.0\bin\Release\net7.0-windows\GUI 7.0.pdb
+C:\Users\muxa1\Desktop\Desktop\GitHub\ReadFlatFile\GUI 7.0\bin\Release\net7.0-windows\Utils.dll
+C:\Users\muxa1\Desktop\Desktop\GitHub\ReadFlatFile\GUI 7.0\bin\Release\net7.0-windows\Utils.pdb
+C:\Users\muxa1\Desktop\Desktop\GitHub\ReadFlatFile\GUI 7.0\obj\Release\net7.0-windows\GUI 7.0.csproj.AssemblyReference.cache
+C:\Users\muxa1\Desktop\Desktop\GitHub\ReadFlatFile\GUI 7.0\obj\Release\net7.0-windows\GUI_7._0.MainView.resources
+C:\Users\muxa1\Desktop\Desktop\GitHub\ReadFlatFile\GUI 7.0\obj\Release\net7.0-windows\GUI_7._0.Properties.Resources.resources
+C:\Users\muxa1\Desktop\Desktop\GitHub\ReadFlatFile\GUI 7.0\obj\Release\net7.0-windows\GUI_7._0.AboutView.resources
+C:\Users\muxa1\Desktop\Desktop\GitHub\ReadFlatFile\GUI 7.0\obj\Release\net7.0-windows\GUI_7._0.Views.SearchAttributes.resources
+C:\Users\muxa1\Desktop\Desktop\GitHub\ReadFlatFile\GUI 7.0\obj\Release\net7.0-windows\GUI 7.0.csproj.GenerateResource.cache
+C:\Users\muxa1\Desktop\Desktop\GitHub\ReadFlatFile\GUI 7.0\obj\Release\net7.0-windows\GUI 7.0.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\muxa1\Desktop\Desktop\GitHub\ReadFlatFile\GUI 7.0\obj\Release\net7.0-windows\GUI 7.0.AssemblyInfoInputs.cache
+C:\Users\muxa1\Desktop\Desktop\GitHub\ReadFlatFile\GUI 7.0\obj\Release\net7.0-windows\GUI 7.0.AssemblyInfo.cs
+C:\Users\muxa1\Desktop\Desktop\GitHub\ReadFlatFile\GUI 7.0\obj\Release\net7.0-windows\GUI 7.0.csproj.CoreCompileInputs.cache
+C:\Users\muxa1\Desktop\Desktop\GitHub\ReadFlatFile\GUI 7.0\obj\Release\net7.0-windows\GUI 7.0.csproj.CopyComplete
+C:\Users\muxa1\Desktop\Desktop\GitHub\ReadFlatFile\GUI 7.0\obj\Release\net7.0-windows\GUI 7.0.dll
+C:\Users\muxa1\Desktop\Desktop\GitHub\ReadFlatFile\GUI 7.0\obj\Release\net7.0-windows\refint\GUI 7.0.dll
+C:\Users\muxa1\Desktop\Desktop\GitHub\ReadFlatFile\GUI 7.0\obj\Release\net7.0-windows\GUI 7.0.pdb
+C:\Users\muxa1\Desktop\Desktop\GitHub\ReadFlatFile\GUI 7.0\obj\Release\net7.0-windows\GUI 7.0.genruntimeconfig.cache
+C:\Users\muxa1\Desktop\Desktop\GitHub\ReadFlatFile\GUI 7.0\obj\Release\net7.0-windows\ref\GUI 7.0.dll
