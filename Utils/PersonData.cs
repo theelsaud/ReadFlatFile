@@ -124,26 +124,40 @@ namespace Utils
                 + SPLITSYMBOL + fio.PadRight(50) + SPLITSYMBOL;
         }
 
-        public bool SearchValided(List<ValidateData> hValidList, bool bAND)
+        public bool SearchValided(List<List<ValidateData>> hValidList, bool bAND)
         {
             if (hValidList == null) return true;
 
             List<bool> bState = new();
+            int iCount = SumOfListCounts(hValidList);
 
-            foreach (ValidateData v in hValidList)
+            foreach (List<ValidateData> v in hValidList)
             {
-                string data = GetStringByPos(v.Pos);
+                foreach (ValidateData h in v)
+                {
+                    string data = GetStringByPos(h.Pos);
 
-                if(v.SearchString.Trim() == data) bState.Add(true);
+                    if (h.SearchString.Trim() == data) bState.Add(true);
 
-                Console.WriteLine($"{v.SearchString.Trim() == data} | {data} - {v.SearchString.Trim()}");
+                    Console.WriteLine($"{h.SearchString.Trim() == data} | {data} - {h.SearchString.Trim()}");
+                }
             }
 
             if(bAND) {
-                return hValidList.Count() == bState.Count();
+                return iCount == bState.Count();
             } else {
                 return bState.Count() > 0;
             }
+        }
+
+        public static int SumOfListCounts<T>(List<List<T>> listOfLists)
+        {
+            int sum = 0;
+            foreach (var list in listOfLists)
+            {
+                sum += list.Count;
+            }
+            return sum;
         }
 
         public string GetStringByPos(Position pos)

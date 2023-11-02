@@ -85,7 +85,7 @@ namespace Utils
             return (int)Math.Round(result);
         }
 
-        public List<PersonData> SearchFiltered(List<PersonData.ValidateData> hList, bool bAND)
+        public List<PersonData> SearchFiltered(List<List<PersonData.ValidateData>> hList, bool bAND)
         {
             List<PersonData> returnData = new();
 

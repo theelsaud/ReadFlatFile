@@ -16,8 +16,100 @@ namespace GUI.Views
     public partial class SearchAttributes : Form
     {
         private MainView hView;
-        private SearchEngine SE = new SearchEngine();
-        private List<TextBox> textBoxes = new List<TextBox>();
+        private SearchEngine SE;
+
+        
+
+        private class Fields
+        {
+            private const int iOffsetX = 30;
+            private const int iOffsetY = 10;
+
+            private const int iStartPosX = 20;
+            private const int iStartPosY = 100;
+
+            private const int iLabelSizeWidth = 50;
+            private const int iLabelSizeHeight = 25;
+
+            private const int iTextBoxSizeWidth = 100;
+            private const int iTextBoxSizeHeight = 25;
+
+            private const int iComboBoxSizeWidth = 40;
+            private const int iComboBoxSizeHeight = 25;
+
+            public Label hLabel = new();
+            public List<TextBox> textBoxes = new();
+            public List<ComboBox> comboBoxes = new();
+
+            public Fields(string LabelText, int iPos, int iColumns, Control.ControlCollection hControll)
+            {
+                hLabel = new Label();
+                hLabel.Text = LabelText;
+                hLabel.Location = new Point(iStartPosX, iStartPosY + (iLabelSizeHeight + iOffsetY) * iPos);
+                hLabel.Size = new Size(iLabelSizeWidth, iLabelSizeHeight);
+
+                hControll.Add(hLabel);
+
+                for (int i = 0; i < iColumns; i++)
+                {
+                    Point hPoint;
+                    if (i == 0)
+                    {
+                        hPoint = new(hLabel.Location.X + iLabelSizeWidth + iOffsetX, hLabel.Location.Y);
+                    } else {
+                        hPoint = new(textBoxes[i-1].Location.X + iTextBoxSizeWidth + iComboBoxSizeWidth + iOffsetX, textBoxes[i-1].Location.Y);
+                    }
+
+                    TextBox textBox = new TextBox()
+                    {
+                        Name = "textBox_" + iPos.ToString() + "_" + i.ToString(),
+                        Location = hPoint, // Расположение TextBox на форме
+                        Size = new Size(iTextBoxSizeWidth, iTextBoxSizeHeight), // Размер TextBox
+                    };
+
+                    ComboBox comboBox = new ComboBox()
+                    {
+                        Location = new Point(textBox.Location.X + textBox.Width + 10, textBox.Location.Y), // Расположение ComboBox на форме (next to TextBox)
+                        Size = new Size(iComboBoxSizeWidth, iComboBoxSizeHeight), // Размер ComboBox
+                    };
+
+                    comboBox.Items.AddRange(new string[] { "=", ">=", "<=" });
+                    comboBox.SelectedIndex = 0;
+
+                    textBoxes.Add(textBox);
+                    comboBoxes.Add(comboBox);
+
+                    hControll.Add(textBox);
+                    hControll.Add(comboBox);
+                }
+            }
+
+            public void Dispose()
+            {
+                // Remove ComboBoxes
+                foreach (var comboBox in comboBoxes)
+                {
+                    comboBox.Parent.Controls.Remove(comboBox);
+                    comboBox.Dispose();
+                }
+                comboBoxes.Clear();
+
+                // Remove TextBoxes
+                foreach (var textBox in textBoxes)
+                {
+                    textBox.Parent.Controls.Remove(textBox);
+                    textBox.Dispose();
+                }
+                textBoxes.Clear();
+
+                // Remove Label
+                hLabel.Parent.Controls.Remove(hLabel);
+                hLabel.Dispose();
+            }
+        }
+
+        private List<Fields> hFields = new();
+        private int Rows = 1;
 
         public SearchAttributes(MainView mainView)
         {
@@ -28,29 +120,39 @@ namespace GUI.Views
             LoadFields();
         }
 
+        private void Limiter(int iValue)
+        {
+            if (iValue < 1)
+            {
+                Rows = 1;
+                return;
+            }
+
+            if (iValue > 9)
+            {
+                Rows = 10;
+                return;
+            }
+
+            Rows = iValue;
+        }
+
         private void LoadFields()
         {
-            //SuspendLayout();
+            foreach(var hField in hFields)
+            {
+                hField.Dispose();
+            }
+            
+            hFields.Clear();
+
 
             // Перебираем элементы перечисления и создаем для каждого Label и TextBox
             for (PersonData.Position pos = 0; pos < PersonData.Position.COUNT; pos++)
             {
-                Label label = new Label();
-                label.Text = PersonData.PositionNames[(int)pos] + ": "; // Устанавливаем текст Label из массива PositionNames
-                label.Location = new System.Drawing.Point(20, 100 + 30 * (int)pos); // Расположение Label на форме
-                this.Controls.Add(label); // Добавляем Label на форму
+                Fields hField = new(PersonData.PositionNames[(int)pos] + ": ", (int)pos, Rows, this.Controls);
 
-                TextBox textBox = new()
-                {
-                    Location = new Point(200, 100 + 30 * (int)pos), // Расположение TextBox на форме
-                    Size = new Size(100, 23), // Размер TextBox                    
-                };
-
-                this.Controls.Add(textBox); // Добавляем TextBox на форму
-
-                textBox.Focus();
-
-                textBoxes.Add(textBox);
+                hFields.Add(hField);
             }
 
             //ResumeLayout(false);
@@ -61,31 +163,54 @@ namespace GUI.Views
         {
             string buf = "";
 
-            int i = 0;
-            List<PersonData.ValidateData> hList = new();
+            List<List<PersonData.ValidateData>> tList = new();
 
-            foreach (TextBox textBox in textBoxes)
+            for(int i = 0; i < hFields.Count(); i++)
             {
-                string value = textBox.Text;
-
-                if(value != "")
+                List<PersonData.ValidateData> hList = new();
+                for (int j = 0; j < hFields[i].textBoxes.Count(); j++)
                 {
-                    PersonData.ValidateData SObj = new();
-                    SObj.Pos = (PersonData.Position)i;
-                    SObj.SearchString = value;
+                    string value = hFields[i].textBoxes[j].Text;
+                    string op = hFields[i].comboBoxes[j].Text;
 
-                    hList.Add(SObj);
+                    if (value != "")
+                    {
+                        PersonData.ValidateData SObj = new();
+                        SObj.Pos = (PersonData.Position)i;
+                        SObj.SearchString = value;
+
+                        hList.Add(SObj);
+                    }
+
+                    
+
+                    buf += value + "\n";
                 }
 
-                buf += value + "\n";
-                i++;
+                if(hList.Count() > 0) tList.Add(hList);
             }
 
-            List<PersonData> hFiltered = SE.SearchFiltered(hList, radioButton1.Checked);
+            List<PersonData> hFiltered = SE.SearchFiltered(tList, radioButton1.Checked);
 
             string buffer = $"Поиск по инвертированному списку: найдено {hFiltered.Count()} записей:\n\n\n";
 
             hView.ShowResult(buffer, hFiltered);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Limiter(++Rows);
+            label3.Text = Rows.ToString();
+            LoadFields();
+            Console.WriteLine(Rows.ToString());
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Limiter(--Rows);
+            label3.Text = Rows.ToString();
+            LoadFields();
+            Console.WriteLine(Rows.ToString());
         }
     }
 }

@@ -34,7 +34,9 @@
             radioButton2 = new RadioButton();
             label2 = new Label();
             button2 = new Button();
-            textBox1 = new TextBox();
+            button3 = new Button();
+            button4 = new Button();
+            label3 = new Label();
             SuspendLayout();
             // 
             // radioButton1
@@ -97,19 +99,43 @@
             button2.Text = "Сгенерировать файл индексов";
             button2.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // button3
             // 
-            textBox1.Location = new Point(689, 71);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
-            textBox1.TabIndex = 6;
+            button3.Location = new Point(755, 71);
+            button3.Name = "button3";
+            button3.Size = new Size(33, 23);
+            button3.TabIndex = 7;
+            button3.Text = "+";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
+            // button4
+            // 
+            button4.Location = new Point(716, 71);
+            button4.Name = "button4";
+            button4.Size = new Size(33, 23);
+            button4.TabIndex = 8;
+            button4.Text = "-";
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(697, 75);
+            label3.Name = "label3";
+            label3.Size = new Size(13, 15);
+            label3.TabIndex = 9;
+            label3.Text = "1";
             // 
             // SearchAttributes
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(textBox1);
+            Controls.Add(label3);
+            Controls.Add(button4);
+            Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(label2);
             Controls.Add(radioButton2);
@@ -130,6 +156,8 @@
         private RadioButton radioButton2;
         private Label label2;
         private Button button2;
-        private TextBox textBox1;
+        private Button button3;
+        private Button button4;
+        private Label label3;
     }
 }
