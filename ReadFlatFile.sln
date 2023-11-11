@@ -6,6 +6,14 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Utils", "Utils\Utils.csproj", "{A10E8853-C4B1-4E0D-B3DF-159F5AD760AC}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GUI", "GUI 7.0\GUI.csproj", "{7BFEC412-3CF5-40FB-8FF2-2BDB464764AB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A10E8853-C4B1-4E0D-B3DF-159F5AD760AC} = {A10E8853-C4B1-4E0D-B3DF-159F5AD760AC}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3727E846-9906-49B3-B7B0-7147F1B42762}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

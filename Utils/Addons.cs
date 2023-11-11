@@ -125,7 +125,7 @@ namespace Utils
             return data[GetRandomInt(0, data.Count - 1)];
         }
 
-        public  void GenerateData(int Lines = 1000)
+        public void GenerateData(int Lines = 1000)
         {
             Console.WriteLine($"> Running Generating data: {Lines} lines");
 

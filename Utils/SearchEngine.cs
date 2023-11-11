@@ -212,6 +212,35 @@ namespace Utils
             return returnData;
         }
 
+        public List<PersonData> LoadFromFile()
+        {
+            List<PersonData> returnData = new();
+
+            if (!File.Exists(FILE_DATA))
+            {
+                Console.WriteLine("File not found " + FILE_DATA);
+                return returnData;
+            }
+
+            using (var reader = new StreamReader(FILE_DATA))
+            {
+                int x = 0;
+                string? line;
+                while ((line = reader.ReadLine()) != null)
+                {
+                    PersonData data = new();
+
+                    bool bState = data.ParseData(line);
+                    if (bState) returnData.Add(data);
+                    else Console.WriteLine($"Failed to parse data (Line: {x + 1})");
+
+                    x++;
+                }
+            }
+
+            return returnData;
+        }
+
         public int GetCountLineOnFile(string filePath)
         {
             if(File.Exists(filePath))

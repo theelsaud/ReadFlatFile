@@ -20,3 +20,16 @@ C:\Users\muxa1\Desktop\Desktop\GitHub\ReadFlatFile\Utils\obj\Debug\net7.0\Utils.
 C:\Users\muxa1\Desktop\Desktop\GitHub\ReadFlatFile\Utils\obj\Debug\net7.0\refint\Utils.dll
 C:\Users\muxa1\Desktop\Desktop\GitHub\ReadFlatFile\Utils\obj\Debug\net7.0\Utils.pdb
 C:\Users\muxa1\Desktop\Desktop\GitHub\ReadFlatFile\Utils\obj\Debug\net7.0\ref\Utils.dll
+C:\Users\elsau\source\github\university\ReadFlatFile\Utils\bin\Debug\net7.0\Utils.deps.json
+C:\Users\elsau\source\github\university\ReadFlatFile\Utils\bin\Debug\net7.0\Utils.dll
+C:\Users\elsau\source\github\university\ReadFlatFile\Utils\bin\Debug\net7.0\Utils.pdb
+C:\Users\elsau\source\github\university\ReadFlatFile\Utils\obj\Debug\net7.0\Utils.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\elsau\source\github\university\ReadFlatFile\Utils\obj\Debug\net7.0\Utils.AssemblyInfoInputs.cache
+C:\Users\elsau\source\github\university\ReadFlatFile\Utils\obj\Debug\net7.0\Utils.AssemblyInfo.cs
+C:\Users\elsau\source\github\university\ReadFlatFile\Utils\obj\Debug\net7.0\Utils.csproj.CoreCompileInputs.cache
+C:\Users\elsau\source\github\university\ReadFlatFile\Utils\obj\Debug\net7.0\Utils.dll
+C:\Users\elsau\source\github\university\ReadFlatFile\Utils\obj\Debug\net7.0\refint\Utils.dll
+C:\Users\elsau\source\github\university\ReadFlatFile\Utils\obj\Debug\net7.0\Utils.pdb
+C:\Users\elsau\source\github\university\ReadFlatFile\Utils\obj\Debug\net7.0\ref\Utils.dll
+C:\Users\elsau\source\github\university\ReadFlatFile\Utils\obj\Debug\net7.0\Utils.Properties.Resources.resources
+C:\Users\elsau\source\github\university\ReadFlatFile\Utils\obj\Debug\net7.0\Utils.csproj.GenerateResource.cache

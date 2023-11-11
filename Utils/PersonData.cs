@@ -66,8 +66,8 @@ namespace Utils
 
             //id = Utils.GenerateUniqueId(x).ToString();
             id = x.ToString();
-            group = Addons.GetRandomInt(100, 104).ToString();
             course = Addons.GetRandomInt(1, 4).ToString();
+            group = Addons.GetRandomInt(100, 104).ToString();
         }
 
         public PersonData(int id, string fio, string group, string course, bool sex)
@@ -118,8 +118,8 @@ namespace Utils
         public readonly string ExportData()
         {
             return id.PadLeft(8, '0')
-                + SPLITSYMBOL + group.PadRight(4)
                 + SPLITSYMBOL + course.PadRight(4)
+                + SPLITSYMBOL + group.PadRight(4)
                 + SPLITSYMBOL + (sex ? "М" : "Ж").PadRight(4)
                 + SPLITSYMBOL + fio.PadRight(50) + SPLITSYMBOL;
         }
@@ -162,6 +162,7 @@ namespace Utils
 
         public string GetStringByPos(Position pos)
         {
+            Console.WriteLine($"{pos} - {InputString[(int)pos].Trim()}");
             return InputString[(int)pos].Trim();
         }
 
