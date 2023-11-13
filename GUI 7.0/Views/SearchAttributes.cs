@@ -18,7 +18,7 @@ namespace GUI.Views
         private MainView hView;
         private SearchEngine SE;
 
-        
+
 
         private class Fields
         {
@@ -56,8 +56,10 @@ namespace GUI.Views
                     if (i == 0)
                     {
                         hPoint = new(hLabel.Location.X + iLabelSizeWidth + iOffsetX, hLabel.Location.Y);
-                    } else {
-                        hPoint = new(textBoxes[i-1].Location.X + iTextBoxSizeWidth + iComboBoxSizeWidth + iOffsetX, textBoxes[i-1].Location.Y);
+                    }
+                    else
+                    {
+                        hPoint = new(textBoxes[i - 1].Location.X + iTextBoxSizeWidth + iComboBoxSizeWidth + iOffsetX, textBoxes[i - 1].Location.Y);
                     }
 
                     TextBox textBox = new TextBox()
@@ -139,11 +141,11 @@ namespace GUI.Views
 
         private void LoadFields()
         {
-            foreach(var hField in hFields)
+            foreach (var hField in hFields)
             {
                 hField.Dispose();
             }
-            
+
             hFields.Clear();
 
 
@@ -165,7 +167,7 @@ namespace GUI.Views
 
             List<List<PersonData.ValidateData>> tList = new();
 
-            for(int i = 0; i < hFields.Count(); i++)
+            for (int i = 0; i < hFields.Count(); i++)
             {
                 List<PersonData.ValidateData> hList = new();
                 for (int j = 0; j < hFields[i].textBoxes.Count(); j++)
@@ -182,12 +184,12 @@ namespace GUI.Views
                         hList.Add(SObj);
                     }
 
-                    
+
 
                     buf += value + "\n";
                 }
 
-                if(hList.Count() > 0) tList.Add(hList);
+                if (hList.Count() > 0) tList.Add(hList);
             }
 
             List<PersonData> hFiltered = SE.SearchFiltered(tList, radioButton1.Checked);

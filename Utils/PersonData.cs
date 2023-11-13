@@ -160,9 +160,14 @@ namespace Utils
             return sum;
         }
 
+        public int GetIntByPos(Position pos)
+        {
+            return Convert.ToInt32(InputString[(int)pos].Trim());
+        }
+
         public string GetStringByPos(Position pos)
         {
-            Console.WriteLine($"{pos} - {InputString[(int)pos].Trim()}");
+            //Console.WriteLine($"{pos} - {InputString[(int)pos].Trim()}");
             return InputString[(int)pos].Trim();
         }
 

@@ -97,7 +97,7 @@ namespace GUI
 
                 if (checkBox2.Checked)
                 {
-                    if(data.Count() > 1)
+                    if (data.Count() > 1)
                     {
                         data.RemoveRange(1, data.Count - 1);
                     }
@@ -129,14 +129,15 @@ namespace GUI
             //    buffer += $"==================================\n\n\n";
             //});
 
-            if(data == null || data.Count() == 0) {
+            if (data == null || data.Count() == 0)
+            {
                 richTextBox1.Text = "Data 0 list";
                 return buf;
             }
 
             data.ForEach(x =>
             {
-                for(int i = 0; i < (int)PersonData.Position.COUNT; i++)
+                for (int i = 0; i < (int)PersonData.Position.COUNT; i++)
                 {
                     buf += $"{PersonData.PositionNames[i]}: {x.GetStringByPos((PersonData.Position)i)}\n";
                 }
@@ -256,7 +257,7 @@ namespace GUI
 
         private void ïîèñêÏîÀòðèáóòàìToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new SearchAttributes(this).Show();
+            //new SearchAttributes(this).Show();
         }
 
         public RichTextBox GetRichTextBox()
@@ -267,6 +268,16 @@ namespace GUI
         public SearchEngine GetSearchEngine()
         {
             return SE;
+        }
+
+        private void ïîèñêÏîÔàéëóToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new SearchAttributes(this).Show();
+        }
+
+        private void ïîèñê×åðåçÈíâåðòèðîâàííûéÑïèñîêToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new Views.InvertedList(this).Show();
         }
     }
 
