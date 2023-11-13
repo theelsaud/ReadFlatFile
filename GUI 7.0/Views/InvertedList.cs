@@ -108,7 +108,31 @@ namespace GUI.Views
 
         private void button1_Click(object sender, EventArgs e)
         {
+            List<PersonData.ValidateData> tList = new();
 
+            for (int i = 0; i < hFields.Count(); i++)
+            {
+                List<PersonData.ValidateData> hList = new();
+
+                string value = hFields[i].textBox.Text;
+
+                if (value != "")
+                {
+                    PersonData.ValidateData SObj = new();
+                    SObj.Pos = (PersonData.Position)i;
+                    SObj.SearchString = value;
+
+                    tList.Add(SObj);
+                }
+            }
+
+            Console.WriteLine(tList.Count.ToString());
+
+            var hPersons = hInvertedList.Search(tList, radioButton1.Checked);
+
+            string buffer = $"Поиск по инвертированному списку: найдено {hPersons.Count()} записей:\n\n\n";
+
+            hView.ShowResult(buffer, hPersons);
         }
 
         private void label2_Click(object sender, EventArgs e)

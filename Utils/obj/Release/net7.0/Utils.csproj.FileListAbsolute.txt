@@ -55,3 +55,5 @@ C:\Users\muxa1\Desktop\Desktop\GitHub\ReadFlatFile\Utils\obj\Release\net7.0\Util
 C:\Users\muxa1\Desktop\Desktop\GitHub\ReadFlatFile\Utils\obj\Release\net7.0\refint\Utils.dll
 C:\Users\muxa1\Desktop\Desktop\GitHub\ReadFlatFile\Utils\obj\Release\net7.0\Utils.pdb
 C:\Users\muxa1\Desktop\Desktop\GitHub\ReadFlatFile\Utils\obj\Release\net7.0\ref\Utils.dll
+D:\GitHub\C#\ReadFlatFileGitHub\Utils\obj\Release\net7.0\Utils.Properties.Resources.resources
+D:\GitHub\C#\ReadFlatFileGitHub\Utils\obj\Release\net7.0\Utils.csproj.GenerateResource.cache

@@ -27,19 +27,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\elsau\\.nuget\\packages\\": {}
+    "C:\\Users\\Admin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\elsau\\source\\github\\university\\ReadFlatFile\\GUI 7.0\\GUI.csproj",
+      "projectUniqueName": "D:\\GitHub\\C#\\ReadFlatFileGitHub\\GUI 7.0\\GUI.csproj",
       "projectName": "GUI",
-      "projectPath": "C:\\Users\\elsau\\source\\github\\university\\ReadFlatFile\\GUI 7.0\\GUI.csproj",
-      "packagesPath": "C:\\Users\\elsau\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\elsau\\source\\github\\university\\ReadFlatFile\\GUI 7.0\\obj\\",
+      "projectPath": "D:\\GitHub\\C#\\ReadFlatFileGitHub\\GUI 7.0\\GUI.csproj",
+      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+      "outputPath": "D:\\GitHub\\C#\\ReadFlatFileGitHub\\GUI 7.0\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\elsau\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -53,8 +53,8 @@
         "net7.0-windows7.0": {
           "targetAlias": "net7.0-windows",
           "projectReferences": {
-            "C:\\Users\\elsau\\source\\github\\university\\ReadFlatFile\\Utils\\Utils.csproj": {
-              "projectPath": "C:\\Users\\elsau\\source\\github\\university\\ReadFlatFile\\Utils\\Utils.csproj"
+            "D:\\GitHub\\C#\\ReadFlatFileGitHub\\Utils\\Utils.csproj": {
+              "projectPath": "D:\\GitHub\\C#\\ReadFlatFileGitHub\\Utils\\Utils.csproj"
             }
           }
         }

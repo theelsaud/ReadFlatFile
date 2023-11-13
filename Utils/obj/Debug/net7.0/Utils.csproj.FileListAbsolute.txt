@@ -33,3 +33,5 @@ C:\Users\elsau\source\github\university\ReadFlatFile\Utils\obj\Debug\net7.0\Util
 C:\Users\elsau\source\github\university\ReadFlatFile\Utils\obj\Debug\net7.0\ref\Utils.dll
 C:\Users\elsau\source\github\university\ReadFlatFile\Utils\obj\Debug\net7.0\Utils.Properties.Resources.resources
 C:\Users\elsau\source\github\university\ReadFlatFile\Utils\obj\Debug\net7.0\Utils.csproj.GenerateResource.cache
+D:\GitHub\C#\ReadFlatFileGitHub\Utils\obj\Debug\net7.0\Utils.Properties.Resources.resources
+D:\GitHub\C#\ReadFlatFileGitHub\Utils\obj\Debug\net7.0\Utils.csproj.GenerateResource.cache

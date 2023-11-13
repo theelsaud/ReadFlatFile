@@ -8,19 +8,19 @@
     "net7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\elsau\\.nuget\\packages\\": {}
+    "C:\\Users\\Admin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\elsau\\source\\github\\university\\ReadFlatFile\\Utils\\Utils.csproj",
+      "projectUniqueName": "D:\\GitHub\\C#\\ReadFlatFileGitHub\\Utils\\Utils.csproj",
       "projectName": "Utils",
-      "projectPath": "C:\\Users\\elsau\\source\\github\\university\\ReadFlatFile\\Utils\\Utils.csproj",
-      "packagesPath": "C:\\Users\\elsau\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\elsau\\source\\github\\university\\ReadFlatFile\\Utils\\obj\\",
+      "projectPath": "D:\\GitHub\\C#\\ReadFlatFileGitHub\\Utils\\Utils.csproj",
+      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+      "outputPath": "D:\\GitHub\\C#\\ReadFlatFileGitHub\\Utils\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\elsau\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
